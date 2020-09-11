@@ -2,20 +2,19 @@
 <html>
 
 <head>
-	<title>Liste CLIENTS</title>
+	<title>Liste des Moniteurs</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" href="./vues/style.css" type="text/css" />
+	<link rel="stylesheet" href="./css/style.css" type="text/css" />
         
 </head>
 <body>
     <form action="index.php?uc=creerMoniteur&action=creationMoniteur" method="post">
-        <p><H1>Liste des clients</H1><br>
+        <p><H1>Liste des Moniteurs</H1><br>
 
         <table border=3 cellspacing=1 >
             <tr>
             <th>Nom :</th><th>Prénom :</th>
-            <th>Adresse:</th><th>Code postal:</th>
-            <th>Ville :</th>
+            <th>date d'embauche :</th>
             </tr> 
             
         <?php
@@ -34,7 +33,6 @@
             <tr>
                 <td width=150><?php echo $nom ?></a></td>
                 <td width=150><?php echo $prenom ?></td>
-                <td width=300><?php echo $adresse ?></td>
                 <td width=100><?php echo $embauche?></td>
                 
 
