@@ -86,7 +86,9 @@ class PdoCastellane
 		return $laLigne;
     }
 
-    /*Affichage Moniteur*/ 
+	/*Gestion Moniteur
+	* affichage
+	*/
     public function getLesMoniteurs()
     {
         $req = "SELECT * from moniteur";
@@ -102,9 +104,40 @@ class PdoCastellane
 		$res->execute();
 		$laLigne = $res->fetch();
 		return $laLigne;
-    }
+	}
+	
+	/* Création*/
+	public function creerMoniteur($nom, $prenom, $date)
+	{
+		$res = PdoCastellane::$monPdo->prepare('INSERT INTO moniteur (nom, prenom, date_d_embauche) VALUES (:nom, :prenom, :dateembauche)');
+		$res->bindvalue('nom', $nom, PDO::PARAM_STR);
+		$res->bindvalue('prenom', $prenom, PDO::PARAM_STR);
+		$res->bindvalue('dateembauche', $date, PDO::PARAM_STR);
+		$res->execute();
+	}
 
-    /*Affichage Voiture*/ 
+	/*Modification*/
+	public function modifMoniteur($id, $nom, $prenom, $date)
+	{
+		$res = PdoCastellane::$monPdo->prepare('UPDATE moniteur SET nom = :nom, prenom = :prenom, date_d_embauche = :dateembauche where id_moniteur = :id');
+		$res->bindValue('id',$id, PDO::PARAM_STR);
+		$res->bindValue('nom', $nom, PDO::PARAM_STR);   
+		$res->bindValue('prenom', $prenom, PDO::PARAM_STR);
+		$res->bindValue('dateembauche', $date, PDO::PARAM_STR);
+		$res->execute();
+	}
+
+	/*Suppression*/
+	public function suppMoniteur($id)
+	{
+		$res = PdoCastellane::$monPdo->prepare('DELETE FROM moniteur WHERE id_moniteur = :id');	
+		$res->bindValue('id',$id, PDO::PARAM_STR);
+		$res->execute();
+	}
+
+	/*Gestion Voiture
+	* Affichage
+	*/
     public function getLesVoitures()
     {
         $req = "SELECT * from voiture";

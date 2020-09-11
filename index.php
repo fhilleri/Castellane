@@ -24,7 +24,7 @@ switch($uc)
     case 'creerMoniteur' :
         {include("controleurs/c_creationMoniteurs.php");break;}
     case 'modifierMoniteur' :
-        {include("controleurs/c_modifierMoniteurs.php");break;}
+        {include("controleurs/c_modificationMoniteurs.php");break;}
     case 'supprimerMoniteur' :
         {include("controleurs/c_supprimerMoniteurs.php");break;}
     case 'afficherVoiture' :
