@@ -1,3 +1,7 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
 body{
     margin: 0;
 }
@@ -19,7 +23,9 @@ body{
     text-decoration: none;
     color: black;
     flex-shrink: 1;
-    flex-grow: 1;
+    flex-grow: 0;
+    font-size: 20px;
+    text-align: center;
 }
 
 .navbar_element:hover {
@@ -28,10 +34,6 @@ body{
 }
 
 main {
-    margin-top: 100px;
-}
-
-.main_content {
-    background-color: red;
-    height: 1000px;
+    margin-top: 80px;
+    padding: 0 20px;
 }
