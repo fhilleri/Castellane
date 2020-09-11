@@ -9,13 +9,11 @@
 <body>
     <header>
         <div class="navbar">
-
             <a class="navbar_element" href="index.php?uc=afficherLeçon">Leçons</a>
             <a class="navbar_element" href="index.php?uc=afficherVoiture">Voitures</a>
             <a class="navbar_element" href="index.php?uc=accueil">Accueil</a>
             <a class="navbar_element" href="index.php?uc=afficherMoniteur">Moniteurs</a>
             <a class="navbar_element" href="">Chronologie</a>
-
         </div>
     </header>
 
@@ -41,7 +39,28 @@
             
             <input type="submit">
         </form>
+        
+        <table border=3 cellspacing=1 >
+            <tr>
+                <td>Région :</td>
+            </tr> 
+        <?php
+        
+        foreach($lesRegions as $uneRegion)
+        {
+            $num = $uneRegion['numR'];
+            $libelle = $uneRegion['libelleR'];
+            ?>
+            <tr>
+                <td width=200><?php echo $libelle ?></td>
 
+                <td width=30><a href=index.php?uc=modifierRegion&action=modificationRegion&num=<?php echo $num ?>><img src="images/modifier.gif" title="Modif"></a></td>
+                <td width=30><a href=index.php?uc=supprimerRegion&action=suppressionRegion&num=<?php echo $num ?>><img src="images/supp.png" title="Suppr"></a></td>
+            </tr>
+            <?php 
+        }
+        ?>
+        </table>
         
     </main>
 
