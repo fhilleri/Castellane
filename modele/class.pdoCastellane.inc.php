@@ -53,7 +53,7 @@ class PdoCastellane
 */
 	public function getLesClients()
 	{
-		$req = "SELECT * from client ORDER BY nomC";
+		$req = "SELECT * from client ORDER BY nom";
 		$res = PdoCastellane::$monPdo->query($req);
 		$lesLignes = $res->fetchAll();
 		return $lesLignes;
@@ -122,5 +122,18 @@ class PdoCastellane
 		return $laLigne;
     }
 
+	public function getLeconsPrevues($id_client)
+	{
+		$res = PdoCastellane::$monPdo->prepare('SELECT *
+		FROM lecon 
+		INNER JOIN moniteur on lecon.id_moniteur = moniteur.id_moniteur
+		INNER JOIN voiture on lecon.immatriculation = voiture.immatriculation
+		WHERE lecon.id_client = 1 AND lecon.date_lecon >= NOW()
+		ORDER BY lecon.date_lecon');
+		$res->bindvalue('id_client', $id_client, PDO::PARAM_STR);
+		$res->execute();
+		$lesLignes = $res->fetchAll();
+		return $lesLignes;
+	}
 }
 ?>

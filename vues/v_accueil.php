@@ -21,6 +21,28 @@
 
     <main>
         <h1>Leçons prévues</h1>
+        
+        <form action="">
+        
+            <select name="FId_client">
+                <?php
+                    foreach ($lesClients as $client)
+                    {
+                        $idClient = $client["id_client"];
+                        $nom = $client["nom"];
+                        $prenom = $client["prenom"];
+                        if ($fId_client == $idClient) $selected = " selected ";
+                        else $selected = "";
+
+                        echo ("<option $selected value='$idClient'>$nom $prenom</option>");
+                    }
+                ?>
+            </select>
+            
+            <input type="submit">
+        </form>
+
+        
     </main>
 
 </body>
