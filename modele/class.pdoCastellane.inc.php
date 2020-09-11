@@ -53,71 +53,74 @@ class PdoCastellane
 */
 	public function getLesClients()
 	{
-		$req = "SELECT * from client INNER JOIN region on client.numreg = region.numreg ORDER BY nomC";
+		$req = "SELECT * from client ORDER BY nomC";
 		$res = PdoCastellane::$monPdo->query($req);
 		$lesLignes = $res->fetchAll();
 		return $lesLignes;
-	}
+    }
 
-	/* get un client */
-
-	public function getClient($num)
-	{
-		$res = PdoCastellane::$monPdo->prepare('SELECT * from client where numC = :num');
-		$res->bindvalue('num', $num, PDO::PARAM_STR);
+    public function getLeClient($id)
+    {
+        $res = PdoCastellane::$monPdo->prepare('SELECT * from client where id_client = :id');
+		$res->bindvalue('id', $id, PDO::PARAM_STR);
 		$res->execute();
 		$laLigne = $res->fetch();
 		return $laLigne;
-	}
-
-
-/**
- * Créer un client 
- *
- * Créer un client à partir des arguments validés passés en paramètre
-*/
-	public function creerClient($nom,$prenom,$adresse,$codepostal,$ville,$Region)
-	{
-		$res = PdoCastellane::$monPdo->prepare('INSERT INTO Client (nomC, 
-			prenomC, adresseC, codepostalC, villeC, numreg) VALUES( :nom, 
-			:prenom, :adresse, :codepostal, :ville, :Region)');
-		$res->bindValue('nom',$nom, PDO::PARAM_STR);
-		$res->bindValue('prenom', $prenom, PDO::PARAM_STR);   
-		$res->bindValue('adresse', $adresse, PDO::PARAM_STR);
-		$res->bindValue('codepostal', $codepostal, PDO::PARAM_INT);
-		$res->bindValue('ville', $ville, PDO::PARAM_STR);
-		$res->bindvalue('Region', $Region, PDO::PARAM_STR);
-		$res->execute();
-	}
-
-	/* Modif client */
-	public function modifClient($num,$nom,$prenom,$adresse,$codepostal,$ville,$Region)
-	{
-		$res = PdoCastellane::$monPdo->prepare('UPDATE Client SET nomC = :nom, prenomC = :prenom, adresseC = :adresse, codepostalC = :codepostal, villeC = :ville, numreg = :region where numC = :num');
-		$res->bindValue('nom',$nom, PDO::PARAM_STR);
-		$res->bindValue('prenom', $prenom, PDO::PARAM_STR);   
-		$res->bindValue('adresse', $adresse, PDO::PARAM_STR);
-		$res->bindValue('codepostal', $codepostal, PDO::PARAM_INT);
-		$res->bindValue('ville', $ville, PDO::PARAM_STR);
-		$res->bindvalue('region', $Region, PDO::PARAM_STR);
-		$res->bindValue('num',$num, PDO::PARAM_STR);
-		$res->execute();
-	}
-
-	public function suppClient($num)
-	{
-		$res = PdoCastellane::$monPdo->prepare('DELETE FROM client WHERE numC = :num');	
-		$res->bindValue('num',$num, PDO::PARAM_STR);
-		$res->execute();
-	}
-
-	public function getRegion()
-	{
-		$req = "SELECT * from region";
+    }
+    
+    /*Affichage Leçon*/ 
+    public function getLesLecons()
+    {
+        $req = "SELECT * from lecon";
 		$res = PdoCastellane::$monPdo->query($req);
-		return $res;
-	}
+		$lesLignes = $res->fetchAll();
+		return $lesLignes;
+    }
+    
+    public function getLaLecon($id)
+    {
+        $res = PdoCastellane::$monPdo->prepare('SELECT * from lecon where id_lecon = :id');
+		$res->bindvalue('id', $id, PDO::PARAM_STR);
+		$res->execute();
+		$laLigne = $res->fetch();
+		return $laLigne;
+    }
 
+    /*Affichage Moniteur*/ 
+    public function getLesmoniteurs()
+    {
+        $req = "SELECT * from moniteur";
+		$res = PdoCastellane::$monPdo->query($req);
+		$lesLignes = $res->fetchAll();
+		return $lesLignes;
+    }
+
+    public function getLeMoniteur($id)
+    {
+        $res = PdoCastellane::$monPdo->prepare('SELECT * from moniteur where id_moniteur = :id');
+		$res->bindvalue('id', $id, PDO::PARAM_STR);
+		$res->execute();
+		$laLigne = $res->fetch();
+		return $laLigne;
+    }
+
+    /*Affichage Voiture*/ 
+    public function getLesVoitures()
+    {
+        $req = "SELECT * from voiture";
+		$res = PdoCastellane::$monPdo->query($req);
+		$lesLignes = $res->fetchAll();
+		return $lesLignes;
+    }
+
+    public function getLaVoiture($id)
+    {
+        $res = PdoCastellane::$monPdo->prepare('SELECT * from voiture where immatriculation = :id');
+		$res->bindvalue('id', $id, PDO::PARAM_STR);
+		$res->execute();
+		$laLigne = $res->fetch();
+		return $laLigne;
+    }
 
 }
 ?>
