@@ -20,7 +20,7 @@
 		
         foreach($lesMoniteurs as $Moniteur)
         {
-            $num = $Moniteur['id_moniteur'];
+            $id = $Moniteur['id_moniteur'];
             $nom = $Moniteur['nom'];
             $prenom = $Moniteur['prenom'];
             $embauche = $Moniteur['date_d_embauche'];
@@ -30,8 +30,8 @@
                 <td width=150><?php echo $nom ?></a></td>
                 <td width=150><?php echo $prenom ?></td>
                 <td width=100><?php echo $embauche?></td>
-                <td><a><img src='./images/pencil.svg'></a></td>
-                <td><a><img src='./images/close.svg'></a></td>
+                <td><a href="index.php?uc=modifierMoniteur&action=modifMoniteur&id=<?php echo $id ?>"><img src='./images/pencil.svg'></a></td>
+                <td><a href="index.php?uc=supprimerMoniteur&action=suppMoniteur&id=<?php echo $id ?>"><img src='./images/close.svg'></a></td>
             </tr>
             <?php 
         }
