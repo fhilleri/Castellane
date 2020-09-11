@@ -10,7 +10,7 @@ $pdo = PdoCastellane::getPdoCastellane();
 switch($uc)
 {
 	case 'accueil':
-		{include("controleurs/c_voirClients.php");break;}
+		{include("controleurs/c_accueil.php");break;}
 	case 'creerLeçon' :
 		{include("controleurs/c_creationClient.php");break;}
 	case 'modifierLeçon' :

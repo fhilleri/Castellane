@@ -87,7 +87,7 @@ class PdoCastellane
     }
 
     /*Affichage Moniteur*/ 
-    public function getLesmoniteurs()
+    public function getLesMoniteurs()
     {
         $req = "SELECT * from moniteur";
 		$res = PdoCastellane::$monPdo->query($req);
