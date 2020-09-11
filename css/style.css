@@ -1,0 +1,37 @@
+body{
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: gray;
+}
+
+.navbar_element {
+    display: block;
+    padding: 20px 50px;
+    text-decoration: none;
+    color: black;
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+
+.navbar_element:hover {
+    background-color: aliceblue;
+    padding: 20px 90px;
+}
+
+main {
+    margin-top: 100px;
+}
+
+.main_content {
+    background-color: red;
+    height: 1000px;
+}
