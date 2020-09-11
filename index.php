@@ -6,7 +6,7 @@ if(!isset($_REQUEST['uc']))
 else
 	$uc = $_REQUEST['uc'];
 
-//$pdo = PdoCastellane::getPdoCastellane();	 
+$pdo = PdoCastellane::getPdoCastellane();	 
 switch($uc)
 {
 	case 'accueil':
@@ -19,7 +19,7 @@ switch($uc)
 		{include("controleurs/c_modifierLeçon.php");break;}
 	case 'supprimerLeçon' :
         {include("controleurs/c_supprimerLeçon.php");break;}
-    case 'afficherMoniteur' :
+    case 'afficherMoniteur' : 
         {include("controleurs/c_voirMoniteurs.php");break;}
     case 'creerMoniteur' :
         {include("controleurs/c_creationMoniteurs.php");break;}
