@@ -9,18 +9,15 @@
 <body>
     <header>
         <div class="navbar">
-            <a class="navbar_element" href="index.php?uc=afficherLeçon">Leçons</a>
-            <a class="navbar_element" href="index.php?uc=afficherVoiture">Voitures</a>
-            <a class="navbar_element" href="index.php?uc=accueil">Accueil</a>
-            <a class="navbar_element" href="index.php?uc=afficherMoniteurs">Moniteurs</a>
-            <a class="navbar_element" href="">Chronologie</a>
+            <a class="navbar_element" href="">Accueil</a>
+            <a class="navbar_element" href="">Leçons</a>
+            <a class="navbar_element" href="">Voitures</a>
+            <a class="navbar_element" href="">Moniteurs</a>
         </div>
     </header>
 
     <main>
-        <div class="main_content">
-
-        </div>
+        <h1>Leçons prévues</h1>
     </main>
 
 </body>
