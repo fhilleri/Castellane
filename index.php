@@ -10,7 +10,13 @@ $pdo = PdoCastellane::getPdoCastellane();
 switch($uc)
 {
 	case 'accueil':
+<<<<<<< Updated upstream
 		{include("controleurs/c_voirClients.php");break;}
+=======
+        {include("controleurs/c_accueil.php");break;}
+    case 'afficherLeçon' :
+        {include("controleurs/c_voirLecon.php");break;}
+>>>>>>> Stashed changes
 	case 'creerLeçon' :
 		{include("controleurs/c_creationClient.php");break;}
 	case 'modifierLeçon' :
