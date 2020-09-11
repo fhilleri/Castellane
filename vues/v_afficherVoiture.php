@@ -3,7 +3,7 @@
 <html>
 
 <head>
-	<title>Liste CLIENTS</title>
+	<title>Affichages des voitures</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" href="design.css" />
         

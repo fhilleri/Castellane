@@ -1,5 +1,5 @@
 <?php
 
-	$lesClients = $pdo->getLesVoitures();
+	$lesVoitures = $pdo->getLesVoitures();
 	include("vues/v_afficherVoiture.php");	
 ?>
