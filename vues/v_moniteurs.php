@@ -4,7 +4,7 @@
 <head>
 	<title>Liste des Moniteurs</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" href="./css/style.css" type="text/css" />
+	<link rel="stylesheet" href="./css/style.css">
         
 </head>
 <body>
@@ -30,6 +30,8 @@
                 <td width=150><?php echo $nom ?></a></td>
                 <td width=150><?php echo $prenom ?></td>
                 <td width=100><?php echo $embauche?></td>
+                <td><a><img src='./images/pencil.svg'></a></td>
+                <td><a><img src='./images/close.svg'></a></td>
             </tr>
             <?php 
         }

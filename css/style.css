@@ -2,6 +2,10 @@ body{
     margin: 0;
 }
 
+td {
+    text-align: center;
+}
+
 .navbar {
     display: flex;
     flex-wrap: nowrap;
@@ -19,7 +23,6 @@ body{
     text-decoration: none;
     color: black;
     flex-shrink: 1;
-    flex-grow: 1;
 }
 
 .navbar_element:hover {
@@ -34,4 +37,8 @@ main {
 .main_content {
     background-color: red;
     height: 1000px;
+}
+
+img {
+    width: 20px;
 }
