@@ -12,7 +12,7 @@
             <a class="navbar_element" href="index.php?uc=afficherLeçon">Leçons</a>
             <a class="navbar_element" href="index.php?uc=afficherVoiture">Voitures</a>
             <a class="navbar_element" href="index.php?uc=accueil">Accueil</a>
-            <a class="navbar_element" href="index.php?uc=afficherMoniteurs">Moniteurs</a>
+            <a class="navbar_element" href="index.php?uc=afficherMoniteur">Moniteurs</a>
             <a class="navbar_element" href="">Chronologie</a>
         </div>
     </header>
