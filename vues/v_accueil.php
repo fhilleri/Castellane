@@ -11,7 +11,7 @@
         <div class="navbar">
             <a class="navbar_element" href="">Accueil</a>
             <a class="navbar_element" href="">Leçons</a>
-            <a class="navbar_element" href="">Voitures</a>
+            <a class="navbar_element" href="?uc=c_afficherVoiture">Voitures</a>
             <a class="navbar_element" href="">Moniteurs</a>
         </div>
     </header>
