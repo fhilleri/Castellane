@@ -9,7 +9,7 @@
 <body>
     <header>
         <div class="navbar">
-            <a class="navbar_element" href="">Leçons</a>
+            <a class="navbar_element" href="index.php?uc=afficherLeçon">Leçons</a>
             <a class="navbar_element" href="">Voitures</a>
             <a class="navbar_element" href="">Accueil</a>
             <a class="navbar_element" href="">Moniteurs</a>
