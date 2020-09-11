@@ -19,7 +19,7 @@
 
     <main>
         <h1>Leçons prévues</h1>
-
+        
         <form action="">
         
             <select name="FId_client">
@@ -29,7 +29,10 @@
                         $idClient = $client["id_client"];
                         $nom = $client["nom"];
                         $prenom = $client["prenom"];
-                        echo ("<option value='$idClient'>$nom $prenom</option>");
+                        if ($fId_client == $idClient) $selected = " selected ";
+                        else $selected = "";
+
+                        echo ("<option $selected value='$idClient'>$nom $prenom</option>");
                     }
                 ?>
             </select>
