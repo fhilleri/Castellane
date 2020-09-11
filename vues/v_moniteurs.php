@@ -31,7 +31,7 @@
                 <td width=150><?php echo $prenom ?></td>
                 <td width=100><?php echo $embauche?></td>
                 <td><a href="index.php?uc=modifierMoniteur&action=modifMoniteur&id=<?php echo $id ?>"><img src='./images/pencil.svg'></a></td>
-                <td><a href="index.php?uc=supprimerMoniteur&action=suppMoniteur&id=<?php echo $id ?>"><img src='./images/close.svg'></a></td>
+                <td><a href="index.php?uc=supprimerMoniteur&action=suppressionMoniteur&id=<?php echo $id ?>"><img src='./images/close.svg'></a></td>
             </tr>
             <?php 
         }

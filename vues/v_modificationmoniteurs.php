@@ -11,15 +11,15 @@
 	<body>
 	<p><h1>Modification du moniteur n°<?php echo $id?> :</h1></p><br/>
     <?php 
-        $nom = $unClient['nom'];
-        $prenom = $unClient['prenom'];
-        $date = $unClient['date_d_embauche'];
+        $nom = $moniteur['nom'];
+        $prenom = $moniteur['prenom'];
+        $date = $moniteur['date_d_embauche'];
     ?>
     <form action="index.php?uc=modifierMoniteur&action=confirmModifMoniteur" method="post">
 	
 		<table>
 		<tbody>
-			<input type="hidden" name="id" value= <?php echo $numcli?>>
+			<input type="hidden" name="id" value= <?php echo $id?>>
 			<tr><th>Nom</th><td><input name="Mnom" size=20 value= <?php echo $nom ?>></td></tr>
 			<tr><th>Prenom </th><td><input name="Mprenom" size=20 value= <?php echo $prenom ?>></td></tr>	
 			<tr><th>date d'embauche </th><td><input name="Mdate" size=50 value= "<?php echo $date ?>"></td></tr>	

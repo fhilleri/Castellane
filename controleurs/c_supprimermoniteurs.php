@@ -13,7 +13,7 @@
 		{
 			$id = $_REQUEST['id'];
 			
-			$pdo->suppMoniteurs($id);
+			$pdo->suppMoniteur($id);
 			
 			header('Location: index.php');	
 			break;

@@ -123,7 +123,7 @@ class PdoCastellane
 		$res->bindValue('id',$id, PDO::PARAM_STR);
 		$res->bindValue('nom', $nom, PDO::PARAM_STR);   
 		$res->bindValue('prenom', $prenom, PDO::PARAM_STR);
-		$res->bindValue('dateembauche', $date, PDO::PARAM
+		$res->bindValue('dateembauche', $date, PDO::PARAM_STR);
 		$res->execute();
 	}
 
