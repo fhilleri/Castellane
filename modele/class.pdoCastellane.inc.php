@@ -53,7 +53,7 @@ class PdoCastellane
 */
 	public function getLesClients()
 	{
-		$req = "SELECT * from client ORDER BY nomC";
+		$req = "SELECT * from client ORDER BY nom";
 		$res = PdoCastellane::$monPdo->query($req);
 		$lesLignes = $res->fetchAll();
 		return $lesLignes;

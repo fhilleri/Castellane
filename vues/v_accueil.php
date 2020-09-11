@@ -22,11 +22,22 @@
 
         <form action="">
         
-            <select name="FClient">
-            
+            <select name="FId_client">
+                <?php
+                    foreach ($lesClients as $client)
+                    {
+                        $idClient = $client["id_client"];
+                        $nom = $client["nom"];
+                        $prenom = $client["prenom"];
+                        echo ("<option value='$idClient'>$nom $prenom</option>");
+                    }
+                ?>
             </select>
-        
+            
+            <input type="submit">
         </form>
+
+        
     </main>
 
 </body>
