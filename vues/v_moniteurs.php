@@ -13,8 +13,7 @@
 
         <table border=3 cellspacing=1 >
             <tr>
-            <th>Nom :</th><th>Prénom :</th>
-            <th>date d'embauche :</th>
+            <th>Nom :</th><th>Prénom :</th><th>date d'embauche :</th>
             </tr> 
             
         <?php
@@ -26,18 +25,11 @@
             $prenom = $Moniteur['prenom'];
             $embauche = $Moniteur['date_d_embauche'];
             
-
-
-
             ?>
             <tr>
                 <td width=150><?php echo $nom ?></a></td>
                 <td width=150><?php echo $prenom ?></td>
                 <td width=100><?php echo $embauche?></td>
-                
-
-				<td width=30><a href=index.php?uc=modifierClient&action=modifClient&num=<?php echo $num ?>> <img src="images/modifier.gif" title="Modif"></a></td>
-                <td width=30><a href=index.php?uc=supprimerClient&action=suppressionClient&num=<?php echo $num ?>><img src="images/supp.png" title="Suppr"></a></td>
             </tr>
             <?php 
         }
