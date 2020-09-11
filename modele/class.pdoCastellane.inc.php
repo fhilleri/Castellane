@@ -18,15 +18,15 @@ class PdoCastellane
 		private static $user='root';    		
 		private static $mdp='';	
 		private static $monPdo;
-		private static $monPdoTransNat = null;
+		private static $monPdoCastellane = null;
 /**
  * Constructeur privé, crée l'instance de PDO qui sera sollicitée
  * pour toutes les méthodes de la classe
  */				
 	private function __construct()
 	{
-        PdoCastellane::$monPdo = new PDO(PdoCastellane::$serveur.';'.PdoCastellane::$bdd, PdoCastellane::$user, PdoCastellane::$mdp); 
-        PdoCastellane::$monPdo->query("SET CHARACTER SET utf8");
+			PdoCastellane::$monPdo = new PDO(PdoCastellane::$serveur.';'.PdoCastellane::$bdd, PdoCastellane::$user, PdoCastellane::$mdp); 
+			PdoCastellane::$monPdo->query("SET CHARACTER SET utf8");
 	}
 	public function _destruct(){
 		PdoCastellane::$monPdo = null;
@@ -38,13 +38,13 @@ class PdoCastellane
  * Appel : $instancePdoTransNat = PdoTransNat::getPdoTransNat();
  * @return l'unique objet de la classe PdoTransNat
  */
-	public  static function getPdoTransNat()
+	public  static function getPdoCastellane()
 	{
-		if(PdoCastellane::$monPdoTransNat == null)
+		if(PdoCastellane::$monPdoCastellane == null)
 		{
-			PdoCastellane::$monPdoTransNat= new PdoCastellane();
+			PdoCastellane::$monPdoCastellane = new PdoCastellane();
 		}
-		return PdoCastellane::$monPdoTransNat;  
+		return PdoCastellane::$monPdoCastellane;  
 	}
 /**
  * Retourne tous les clients sous forme d'un tableau associatif

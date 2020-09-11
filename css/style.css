@@ -6,6 +6,10 @@ body{
     margin: 0;
 }
 
+td {
+    text-align: center;
+}
+
 .navbar {
     display: flex;
     flex-wrap: nowrap;
@@ -36,4 +40,13 @@ body{
 main {
     margin-top: 80px;
     padding: 0 20px;
+}
+
+.main_content {
+    background-color: red;
+    height: 1000px;
+}
+
+img {
+    width: 20px;
 }
