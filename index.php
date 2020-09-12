@@ -11,29 +11,29 @@ switch($uc)
 {
 	case 'accueil':
         {include("controleurs/c_accueil.php");break;}
-    case 'afficherLeçon' :
-        {include("controleurs/c_voirLeçon.php");break;}
-	case 'creerLeçon' :
-		{include("controleurs/c_creationLeçon.php");break;}
-	case 'modifierLeçon' :
-		{include("controleurs/c_modifierLeçon.php");break;}
-	case 'supprimerLeçon' :
-        {include("controleurs/c_supprimerLeçon.php");break;}
+    case 'afficherLecon' :
+        {include("controleurs/Lecon/c_voirlecon.php");break;}
+	case 'creerlecon' :
+		{include("controleurs/lecon/c_creationlecon.php");break;}
+	case 'modifierlecon' :
+		{include("controleurs/lecon/c_modificationlecon.php");break;}
+	case 'supprimerlecon' :
+        {include("controleurs/lecon/c_supprimerlecon.php");break;}
     case 'afficherMoniteur' : 
-        {include("controleurs/c_voirMoniteurs.php");break;}
+        {include("controleurs/Moniteur/c_voirmoniteurs.php");break;}
     case 'creerMoniteur' :
-        {include("controleurs/c_creationMoniteurs.php");break;}
+        {include("controleurs/Moniteur/c_creationmoniteurs.php");break;}
     case 'modifierMoniteur' :
-        {include("controleurs/c_modificationMoniteurs.php");break;}
+        {include("controleurs/Moniteur/c_modificationmoniteurs.php");break;}
     case 'supprimerMoniteur' :
-        {include("controleurs/c_supprimerMoniteurs.php");break;}
+        {include("controleurs/Moniteur/c_supprimermoniteurs.php");break;}
     case 'afficherVoiture' :
-        {include("controleurs/c_voirVoitures.php");break;}
+        {include("controleurs/Voiture/c_voirvoitures.php");break;}
     case 'creerVoiture' :
-        {include("controleurs/c_creationVoitures.php");break;}
+        {include("controleurs/Voiture/c_creationvoitures.php");break;}
     case 'modifierVoiture' :
-        {include("controleurs/c_modifierVoitures.php");break;}
+        {include("controleurs/Voiture/c_modificationvoitures.php");break;}
     case 'supprimerVoiture' :
-        {include("controleurs/c_supprimerVoitures.php");break;}
+        {include("controleurs/Voiture/c_supprimervoitures.php");break;}
 }
 ?>

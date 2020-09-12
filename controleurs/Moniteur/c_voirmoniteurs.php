@@ -1,4 +1,4 @@
 <?php
 	$lesMoniteurs = $pdo->getLesMoniteurs();
-	include("vues/v_moniteurs.php");	
+	include("vues/Moniteur/v_moniteurs.php");	
 ?>

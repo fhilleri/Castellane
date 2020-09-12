@@ -6,7 +6,7 @@
 		{	
 			$id = $_REQUEST['id'];
 			$moniteur = $pdo->getLeMoniteur($id);
-			include("vues/v_supprimermoniteurs.php");
+			include("vues/Moniteur/v_supprimermoniteurs.php");
 			break;
 		}
 		case 'confirmSuppressionMoniteur':

@@ -148,12 +148,48 @@ class PdoCastellane
 
     public function getLaVoiture($id)
     {
-        $res = PdoCastellane::$monPdo->prepare('SELECT * from voiture where immatriculation = :id');
+        $res = PdoCastellane::$monPdo->prepare('SELECT * from voiture INNER JOIN modele on modele.id_modele=voiture.id_modele where immatriculation = :id');
 		$res->bindvalue('id', $id, PDO::PARAM_STR);
 		$res->execute();
 		$laLigne = $res->fetch();
 		return $laLigne;
-    }
+	}
+	/*Modele*/
+    public function getModeles()
+    {
+		$req = "SELECT * from modele";
+		$res = PdoCastellane::$monPdo->query($req);
+		return $res;
+	}
+	/*Création*/
+	public function creerVoiture($id, $km, $date, $modele)
+	{
+		$res = PdoCastellane::$monPdo->prepare("INSERT INTO voiture (immatriculation, date_d_achat, solde_km_achat, id_modele) VALUES (:id, :dateachat, :km, :modele)");
+		$res->bindvalue('id', $id, PDO::PARAM_STR);
+		$res->bindvalue('km', $km, PDO::PARAM_STR);
+		$res->bindvalue('dateachat', $date, PDO::PARAM_STR);
+		$res->bindvalue('modele', $modele, PDO::PARAM_STR);
+		$res->execute();
+	}
+
+	/*Modification*/
+	public function modifVoiture($id, $km, $date, $modele)
+	{
+		$res = PdoCastellane::$monPdo->prepare('UPDATE voiture SET immatriculation = :id, date_d_achat = :dateachat, solde_km_achat = :km, id_modele = :modele where immatriculation = :id');
+		$res->bindValue('id',$id, PDO::PARAM_STR);
+		$res->bindValue('km', $km, PDO::PARAM_STR);   
+		$res->bindValue('dateachat', $date, PDO::PARAM_STR);
+		$res->bindvalue('modele', $modele, PDO::PARAM_STR);
+		$res->execute();
+	}
+
+	/*Suppression*/
+	public function suppVoiture($id)
+	{
+		$res = PdoCastellane::$monPdo->prepare('DELETE FROM voiture WHERE immatriculation = :id');	
+		$res->bindValue('id',$id, PDO::PARAM_STR);
+		$res->execute();
+	}	
 
 }
 ?>

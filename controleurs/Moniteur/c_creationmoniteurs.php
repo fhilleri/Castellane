@@ -2,23 +2,20 @@
 	$action=$_REQUEST['action'];
 	switch($action)
 	{
-		case 'modifMoniteur':
-		{	
-			$id = $_REQUEST['id'];
-			$moniteur = $pdo->getLeMoniteur($id);
-			include("vues/v_modificationmoniteurs.php");
+		case 'creationMoniteur':
+		{
+			include("vues/Moniteur/v_creationmoniteurs.php");
 			break;
 		}
-		case 'confirmModifMoniteur':
+		case 'confirmCreatMoniteur':
 		{
-			$id = $_REQUEST['id'];
 			$nom = $_REQUEST['Mnom'];
 			$prenom = $_REQUEST['Mprenom'];
             $originaldate = $_REQUEST['Mdate'];
             $newdate = new DateTime($originaldate);
             $truedate = $newdate->format('Y-m-d');
-            
-			$pdo->modifMoniteur($id,$nom,$prenom,$truedate);
+
+			$pdo->creerMoniteur($nom,$prenom,$truedate);
 			
 			header('Location: index.php');	
 			break;
