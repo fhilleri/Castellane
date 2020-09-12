@@ -1,3 +1,7 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
 body{
     margin: 0;
 }
@@ -23,6 +27,9 @@ td {
     text-decoration: none;
     color: black;
     flex-shrink: 1;
+    flex-grow: 0;
+    font-size: 20px;
+    text-align: center;
 }
 
 .navbar_element:hover {
@@ -31,7 +38,8 @@ td {
 }
 
 main {
-    margin-top: 100px;
+    margin-top: 80px;
+    padding: 0 20px;
 }
 
 .main_content {
