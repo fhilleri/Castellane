@@ -12,7 +12,7 @@ switch($uc)
 	case 'accueil':
         {include("controleurs/c_accueil.php");break;}
     case 'afficherLecon' :
-        {include("controleurs/Lecon/c_voirlecon.php");break;}
+        {include("controleurs/Lecon/c_voirlecons.php");break;}
 	case 'creerlecon' :
 		{include("controleurs/lecon/c_creationlecon.php");break;}
 	case 'modifierlecon' :
