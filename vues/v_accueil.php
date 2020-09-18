@@ -51,7 +51,7 @@
                 else echo "<h3>" . $nbLecons . " lecon de prévue pour " . $nomClient . "</h3>";
         ?>
         
-            <table border=3 cellspacing=1 >
+            <table border=3 cellspacing=1 class="tiles">
                 <tr>
                     <th>Date :</th>
                     <th>Heure :</th>
@@ -76,7 +76,7 @@
                         $modele = $lecon["nomModele"];
                         $immatriculation = $lecon["immatriculation"];
                         ?>
-                        <tr>
+                        <tr class="tile">
                             <td width=200><?php echo $date ?></td>
                             <td width=200><?php echo $heure ?></td>
                             <td width=200><?php echo $prenomMoniteur . " " . $nomMoniteur ?></td>

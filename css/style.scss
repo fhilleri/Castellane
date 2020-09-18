@@ -1,3 +1,5 @@
+// Variables.
+$tile-bg: aliceblue;
 $font-stack: 'Open Sans', sans-serif;
 $color: rgb(138, 73, 243);
 
@@ -45,15 +47,104 @@ main {
     padding: 0 20px;
 }
 
-table {
-    background-color: $color;
-    height: 1000px;
-}
-
 img {
     width: 20px;
 }
 
-H1 {
-    color: $color;
+
+// Gestion tableau
+// Styles.
+.tiles {
+    top: 400px;
+    left: 50%;
+    position: relative;
+    transform: translateY(-50%) translateX(-50%);
+    width: 600px;
+}
+
+
+.tile {
+    animation: .6s cubic-bezier(.25, .25, .25, 1.15) both fade-in;
+    background: $tile-bg;
+    border-radius: 4px;
+    text-align: center;
+    float: none;
+    height: 75px;
+    margin: 5px;
+    width: 330px;
+    
+    .card {
+        backface-visibility: hidden;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        // transform-origin: right center;
+        width: 100%;
+        // z-index: 1;
+        
+        &.front {
+            background-color: $tile-bg;
+        }
+        
+        &.back {
+        background-color: blue;
+        transform: rotateY( 180deg );
+        }
+    }
+}
+
+// Loop from 1-12.
+@for $i from 1 through 1000 {
+    .tile {
+        &:nth-child(#{$i}) {
+        // Delay the animation. Delay increases as items loop.
+        animation-delay: $i * (.06s);
+        }
+    } 
+}
+
+@keyframes fade-in {
+    0% {  
+    opacity: 0;
+    transform: rotateY(180deg);
+    }
+    
+    100% {
+    opacity: 1;
+    transform: rotateY(0deg);
+    }
+}
+
+.reload {
+    background: #e2751c;
+    background: linear-gradient(45deg, rgba(#e21c1c,1) 0%, rgba(#e2751c,1) 100%);
+    border-radius: 50px;
+    bottom: 20px;
+    box-shadow: 0 5px 20px rgba(#000, .2);
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+    left: 50%;
+    letter-spacing: .075em;
+    padding: 10px 15px;
+    position: absolute;
+    text-decoration: none;
+    text-transform: uppercase;
+    transform: translateX(-50%);
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: helvetica, arial, sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    width: 100%;
 }
