@@ -198,7 +198,7 @@ class PdoCastellane
 		INNER JOIN moniteur on lecon.id_moniteur = moniteur.id_moniteur
 		INNER JOIN voiture on lecon.immatriculation = voiture.immatriculation
 		INNER JOIN modele on voiture.id_modele = modele.id_modele
-		WHERE lecon.id_client = 1 AND lecon.date_lecon >= NOW()
+		WHERE lecon.id_client = :id_client AND lecon.date_lecon >= NOW()
 		ORDER BY lecon.date_lecon');
 		$res->bindvalue('id_client', $id_client, PDO::PARAM_STR);
 		$res->execute();

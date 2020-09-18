@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet/css" href="./css/style.css">
+    <link href="./css/style.css" rel="stylesheet">
     <title>Accueil</title>
 </head>
 <body>
@@ -41,15 +41,15 @@
         
         <table border=3 cellspacing=1 >
             <tr>
-                <td>Date :</td>
-                <td>Heure :</td>
-                <td>Moniteur :</td>
+                <th>Date :</th>
+                <th>Heure :</th>
+                <th>Moniteur :</th>
             </tr> 
             <?php
     
                 foreach($lesLecons as $lecon)
                 {
-                    var_dump($lecon);
+                    //var_dump($lecon);
                     $num = $lecon['id_lecon'];
                     $nomMoniteur = $lecon['nom'];
                     $prenomMoniteur = $lecon['prenom'];
