@@ -71,7 +71,11 @@ class PdoCastellane
     /*Affichage Leçon*/ 
     public function getLesLecons()
     {
-        $req = "SELECT * from lecon";
+        $req = "SELECT lecon.id_lecon, lecon.date_lecon, lecon.immatriculation, lecon.id_moniteur, moniteur.nom as nomMoniteur, moniteur.prenom as prenomMoniteur, lecon.id_client, client.nom as nomClient, client.prenom as prenomClient
+		FROM lecon
+		INNER JOIN moniteur on lecon.id_moniteur = moniteur.id_moniteur
+		INNER JOIN client on lecon.id_client = client.id_client
+		ORDER BY lecon.date_lecon";
 		$res = PdoCastellane::$monPdo->query($req);
 		$lesLignes = $res->fetchAll();
 		return $lesLignes;
