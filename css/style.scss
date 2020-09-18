@@ -1,5 +1,8 @@
+$font-stack: 'Open Sans', sans-serif;
+$color: aquamarine;
+
 * {
-    font-family: 'Open Sans', sans-serif;
+    font: 100% $font-stack;
 }
 
 body{
@@ -43,7 +46,7 @@ main {
 }
 
 .main_content {
-    background-color: red;
+    background-color: $color;
     height: 1000px;
 }
 
