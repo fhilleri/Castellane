@@ -1,5 +1,6 @@
 <?php
 require_once("modele/class.pdoCastellane.inc.php");
+date_default_timezone_set("Europe/Paris");
 
 if(!isset($_REQUEST['uc']))
     $uc = 'accueil';
