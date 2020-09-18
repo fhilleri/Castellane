@@ -41,24 +41,31 @@
         
         <table border=3 cellspacing=1 >
             <tr>
-                <td>Région :</td>
+                <td>Date :</td>
+                <td>Heure :</td>
+                <td>Moniteur :</td>
             </tr> 
-        <?php
-        
-        foreach($lesRegions as $uneRegion)
-        {
-            $num = $uneRegion['numR'];
-            $libelle = $uneRegion['libelleR'];
-            ?>
-            <tr>
-                <td width=200><?php echo $libelle ?></td>
+            <?php
+    
+                foreach($lesLecons as $lecon)
+                {
+                    var_dump($lecon);
+                    $num = $lecon['id_lecon'];
+                    $nomMoniteur = $lecon['nom'];
+                    $prenomMoniteur = $lecon['prenom'];
+                    $dateTime = new DateTime($lecon["date_lecon"]);
+                    $date = $dateTime->format("d/m/Y");
+                    $heure = $dateTime->format("H:i");
+                    ?>
+                    <tr>
+                        <td width=200><?php echo $date ?></td>
+                        <td width=200><?php echo $heure ?></td>
+                        <td width=200><?php echo $prenomMoniteur . " " . $nomMoniteur ?></td>
 
-                <td width=30><a href=index.php?uc=modifierRegion&action=modificationRegion&num=<?php echo $num ?>><img src="images/modifier.gif" title="Modif"></a></td>
-                <td width=30><a href=index.php?uc=supprimerRegion&action=suppressionRegion&num=<?php echo $num ?>><img src="images/supp.png" title="Suppr"></a></td>
-            </tr>
-            <?php 
-        }
-        ?>
+                    </tr>
+                    <?php 
+                }
+            ?>
         </table>
         
     </main>
