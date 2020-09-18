@@ -1,8 +1,9 @@
-$font-stack: 'Open Sans', sans-serif;
-$color: aquamarine;
+sass --watch Style.scss style.css
+/*$font-stack: 'Open Sans', sans-serif;
+$color: aquamarine;*/
 
 * {
-    font: 100% $font-stack;
+    font: 100% 'Open Sans', sans-serif;
 }
 
 body{
@@ -46,7 +47,7 @@ main {
 }
 
 .main_content {
-    background-color: $color;
+    background-color: red;
     height: 1000px;
 }
 
