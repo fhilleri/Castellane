@@ -38,36 +38,59 @@
             
             <input type="submit">
         </form>
-        
-        <table border=3 cellspacing=1 >
-            <tr>
-                <td>Date :</td>
-                <td>Heure :</td>
-                <td>Moniteur :</td>
-            </tr> 
-            <?php
-    
-                foreach($lesLecons as $lecon)
-                {
-                    var_dump($lecon);
-                    $num = $lecon['id_lecon'];
-                    $nomMoniteur = $lecon['nom'];
-                    $prenomMoniteur = $lecon['prenom'];
-                    $dateTime = new DateTime($lecon["date_lecon"]);
-                    $date = $dateTime->format("d/m/Y");
-                    $heure = $dateTime->format("H:i");
-                    ?>
-                    <tr>
-                        <td width=200><?php echo $date ?></td>
-                        <td width=200><?php echo $heure ?></td>
-                        <td width=200><?php echo $prenomMoniteur . " " . $nomMoniteur ?></td>
 
-                    </tr>
-                    <?php 
-                }
-            ?>
-        </table>
+        <?php
+            $nbLecons = count($lesLecons);
+            if ($nbLecons == 0)
+            {
+                echo "<h3>Aucune lecon de prévue pour " . $nomClient . "</h3>";
+            }
+            else
+            {
+                if ($nbLecons > 1) echo "<h3>" . $nbLecons . " lecons de prévues pour " . $nomClient . "</h3>";
+                else echo "<h3>" . $nbLecons . " lecon de prévue pour " . $nomClient . "</h3>";
+        ?>
         
+            <table border=3 cellspacing=1 >
+                <tr>
+                    <th>Date :</th>
+                    <th>Heure :</th>
+                    <th>Moniteur :</th>
+                    <th>Modèle de voiture :</th>
+                    <th>Immatriculation :</th>
+                </tr> 
+
+                <?php
+                    for($i = 0; $i < count($lesLecons); $i++)
+                    {
+                        $lecon = $lesLecons[$i];
+
+                        $num = $lecon['id_lecon'];
+                        $nomMoniteur = $lecon['nomMoniteur'];
+                        $prenomMoniteur = $lecon['prenomMoniteur'];
+
+                        $dateTime = new DateTime($lecon["date_lecon"]);
+                        $date = $dateTime->format("d/m/Y");
+                        $heure = $dateTime->format("H:i");
+
+                        $modele = $lecon["nomModele"];
+                        $immatriculation = $lecon["immatriculation"];
+                        ?>
+                        <tr>
+                            <td width=200><?php echo $date ?></td>
+                            <td width=200><?php echo $heure ?></td>
+                            <td width=200><?php echo $prenomMoniteur . " " . $nomMoniteur ?></td>
+                            <td width=200><?php echo $modele ?></td>
+                            <td width=200><?php echo $immatriculation ?></td>
+
+                        </tr>
+                        <?php 
+                    }
+                ?>
+            </table>
+        <?php
+            }
+        ?>
     </main>
 
 </body>

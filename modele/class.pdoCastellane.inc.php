@@ -193,16 +193,16 @@ class PdoCastellane
 
 	public function getLeconsPrevues($id_client)
 	{
-		$res = PdoCastellane::$monPdo->prepare('SELECT *
+		$res = PdoCastellane::$monPdo->prepare('SELECT lecon.id_lecon, moniteur.nom as nomMoniteur, moniteur.prenom as prenomMoniteur, lecon.date_lecon, modele.nom as nomModele, voiture.immatriculation
 		FROM lecon 
 		INNER JOIN moniteur on lecon.id_moniteur = moniteur.id_moniteur
 		INNER JOIN voiture on lecon.immatriculation = voiture.immatriculation
 		INNER JOIN modele on voiture.id_modele = modele.id_modele
-		WHERE lecon.id_client = 1 AND lecon.date_lecon >= NOW()
+		WHERE lecon.id_client = :id_client AND lecon.date_lecon >= NOW()
 		ORDER BY lecon.date_lecon');
 		$res->bindvalue('id_client', $id_client, PDO::PARAM_STR);
 		$res->execute();
-		$lesLignes = $res->fetchAll();
+		$lesLignes = $res->fetchAll(PDO::FETCH_NAMED);
 		return $lesLignes;
 	}
 }
