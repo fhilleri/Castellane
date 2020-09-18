@@ -14,7 +14,7 @@
 class PdoCastellane
 {   		
 		private static $serveur='mysql:host=localhost';
-		private static $bdd='dbname=castellane';   		
+		private static $bdd='dbname=catsellane';   		
 		private static $user='root';    		
 		private static $mdp='';	
 		private static $monPdo;
@@ -203,6 +203,37 @@ class PdoCastellane
 		$res->execute();
 		$lesLignes = $res->fetchAll();
 		return $lesLignes;
+	}
+
+	/*Création*/
+	public function creerClient( $nom, $prenom, $adressse, $datenaiss, $tel, $datecode, $datepermis, $idpa)
+	{
+		$res = PdoCastellane::$monPdo->prepare("INSERT INTO client ( nom, prenom, adresse, date_de_naissance, telephone, date_du_code, date_du_permis, id_paiement) VALUES ( :nom, :prenom, :adresse, :datenaiss, :tel, :datecode, :datepermis, :idpa)");
+		$res->bindvalue('nom', $nom, PDO::PARAM_STR);
+		$res->bindvalue('prenom', $prenom, PDO::PARAM_STR);
+		$res->bindvalue('adresse', $adressse, PDO::PARAM_STR);
+		$res->bindvalue('datenaiss', $datenaiss, PDO::PARAM_STR);
+		$res->bindvalue('tel', $tel, PDO::PARAM_STR);
+		$res->bindvalue('datecode', $datecode, PDO::PARAM_STR);
+		$res->bindvalue('datepermis', $datepermis, PDO::PARAM_STR);
+		$res->bindvalue('idpa', $idpa, PDO::PARAM_STR);
+		$res->execute();
+	}
+
+	/*Modification*/
+	public function modifClient( $nom, $prenom, $adressse, $datenaiss, $tel, $datecode, $datepermis, $idpa, $numcli)
+	{
+		$res = PdoCastellane::$monPdo->prepare('UPDATE client SET nom = :nom, prenom = :prenom, adresse = :adresse, date_de_naissance = :datenaiss, telephone = :tel, date_du_code = :datecode, date_du_permis = :datepermis, id_paiement = :idpa where id_client = :id');
+		$res->bindvalue('nom', $nom, PDO::PARAM_STR);
+		$res->bindvalue('prenom', $prenom, PDO::PARAM_STR);
+		$res->bindvalue('adresse', $adressse, PDO::PARAM_STR);
+		$res->bindvalue('datenaiss', $datenaiss, PDO::PARAM_STR);
+		$res->bindvalue('tel', $tel, PDO::PARAM_STR);
+		$res->bindvalue('datecode', $datecode, PDO::PARAM_STR);
+		$res->bindvalue('datepermis', $datepermis, PDO::PARAM_STR);
+		$res->bindvalue('idpa', $idpa, PDO::PARAM_STR);
+		$res->bindvalue('id', $numcli, PDO::PARAM_STR);
+		$res->execute();
 	}
 }
 ?>
