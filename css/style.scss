@@ -94,15 +94,12 @@ img {
     }
 }
 
-// Loop from 1-12.
-@for $i from 1 through 1000 {
+
     .tile {
-        &:nth-child(#{$i}) {
         // Delay the animation. Delay increases as items loop.
-        animation-delay: $i * (.06s);
-        }
+        animation-delay: (.06s);
     } 
-}
+
 
 @keyframes fade-in {
     0% {  
