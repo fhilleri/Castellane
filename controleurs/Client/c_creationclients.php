@@ -4,6 +4,7 @@
 	{
 		case 'creationClient':
 		{
+			include("vues/navbar.php");
 			include("vues/Client/v_creationclients.php");
 			break;
 		}
