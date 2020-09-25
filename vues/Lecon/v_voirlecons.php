@@ -48,8 +48,6 @@
                 <?php 
             }
             ?>
-            </table>
-            </br>
 
             <input class="button" type="submit" value="créer une nouvelle leçon">
         </form>

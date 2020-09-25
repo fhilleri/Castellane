@@ -254,6 +254,15 @@ class PdoCastellane
 		$res->bindvalue('immatriculation', $immatriculation, PDO::PARAM_STR);
 		$res->execute();
 	}
+
+	/*Suppression*/
+	public function suppLecon($id)
+	{
+		$res = PdoCastellane::$monPdo->prepare('DELETE FROM lecon WHERE id_lecon = :id');	
+		$res->bindValue('id',$id, PDO::PARAM_STR);
+		$res->execute();
+	}
+
 	public function getpaiement()
 	{
 		$req = "SELECT * from mode_de_paiement";
