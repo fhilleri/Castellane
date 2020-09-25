@@ -71,7 +71,11 @@ class PdoCastellane
     /*Affichage Leçon*/ 
     public function getLesLecons()
     {
-        $req = "SELECT * from lecon";
+        $req = "SELECT lecon.id_lecon, lecon.date_lecon, lecon.immatriculation, lecon.id_moniteur, moniteur.nom as nomMoniteur, moniteur.prenom as prenomMoniteur, lecon.id_client, client.nom as nomClient, client.prenom as prenomClient
+		FROM lecon
+		INNER JOIN moniteur on lecon.id_moniteur = moniteur.id_moniteur
+		INNER JOIN client on lecon.id_client = client.id_client
+		ORDER BY lecon.date_lecon";
 		$res = PdoCastellane::$monPdo->query($req);
 		$lesLignes = $res->fetchAll();
 		return $lesLignes;
@@ -193,15 +197,16 @@ class PdoCastellane
 
 	public function getLeconsPrevues($id_client)
 	{
-		$res = PdoCastellane::$monPdo->prepare('SELECT *
+		$res = PdoCastellane::$monPdo->prepare('SELECT lecon.id_lecon, moniteur.nom as nomMoniteur, moniteur.prenom as prenomMoniteur, lecon.date_lecon, modele.nom as nomModele, voiture.immatriculation
 		FROM lecon 
 		INNER JOIN moniteur on lecon.id_moniteur = moniteur.id_moniteur
 		INNER JOIN voiture on lecon.immatriculation = voiture.immatriculation
-		WHERE lecon.id_client = 1 AND lecon.date_lecon >= NOW()
+		INNER JOIN modele on voiture.id_modele = modele.id_modele
+		WHERE lecon.id_client = :id_client AND lecon.date_lecon >= NOW()
 		ORDER BY lecon.date_lecon');
 		$res->bindvalue('id_client', $id_client, PDO::PARAM_STR);
 		$res->execute();
-		$lesLignes = $res->fetchAll();
+		$lesLignes = $res->fetchAll(PDO::FETCH_NAMED);
 		return $lesLignes;
 	}
 }

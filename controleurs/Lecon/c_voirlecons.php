@@ -1,4 +1,4 @@
 <?php
-	$lesVoitures = $pdo->getLesVoitures();
-	include("vues/Voiture/v_voitures.php");	
+	$lesLecons = $pdo->getLesLecons();
+	include("./vues/Lecon/v_voirlecons.php");	
 ?>
