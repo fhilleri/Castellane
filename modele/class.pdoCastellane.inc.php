@@ -209,5 +209,15 @@ class PdoCastellane
 		$lesLignes = $res->fetchAll(PDO::FETCH_NAMED);
 		return $lesLignes;
 	}
+
+	public function creerLecon($date, $moniteur, $client, $immatriculation)
+	{
+		$res = PdoCastellane::$monPdo->prepare("INSERT INTO lecon (date_lecon, id_moniteur, id_client, immatriculation) VALUES (:date_lecon, :id_moniteur, :id_client, :immatriculation)");
+		$res->bindvalue('date_lecon', $date, PDO::PARAM_STR);
+		$res->bindvalue('id_moniteur', $moniteur, PDO::PARAM_STR);
+		$res->bindvalue('id_client', $client, PDO::PARAM_STR);
+		$res->bindvalue('immatriculation', $immatriculation, PDO::PARAM_STR);
+		$res->execute();
+	}
 }
 ?>
