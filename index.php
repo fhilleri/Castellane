@@ -36,5 +36,13 @@ switch($uc)
         {include("controleurs/Voiture/c_modificationvoitures.php");break;}
     case 'supprimerVoiture' :
         {include("controleurs/Voiture/c_supprimervoitures.php");break;}
+    case 'afficherClient' :
+        {include("controleurs/Client/c_voirClients.php");break;}
+    case 'creerClient' :
+        {include("controleurs/Client/c_creationClients.php");break;}
+    case 'modifierClient' :
+        {include("controleurs/Client/c_modificationClients.php");break;}
+    case 'supprimerClient' :
+        {include("controleurs/Client/c_supprimerClients.php");break;}
 }
 ?>

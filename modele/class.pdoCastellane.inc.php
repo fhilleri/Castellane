@@ -67,7 +67,42 @@ class PdoCastellane
 		$laLigne = $res->fetch();
 		return $laLigne;
     }
-    
+	
+	/* Création*/
+	public function creerClient($nom, $prenom, $date, $telepone, $paiement)
+	{
+		$res = PdoCastellane::$monPdo->prepare('INSERT INTO client (nom, prenom, date_de_naissance, telephone, date_du_code, date_permis, id_paiement) VALUES (:nom, :prenom, :datenaissance, :telephone, NULL, NULL, :paiement)');
+		$res->bindvalue('nom', $nom, PDO::PARAM_STR);
+		$res->bindvalue('prenom', $prenom, PDO::PARAM_STR);
+		$res->bindvalue('datenaissance', $date, PDO::PARAM_STR);
+		$res->bindvalue('telepone', $telepone, PDO::PARAM_STR);
+		$res->bindValue('idpaiement', $paiement, PDO::PARAM_STR);
+		$res->execute();
+	}
+
+	/*Modification*/
+	public function modifClient($id, $nom, $prenom, $date, $telepone, $datecode, $datepermis, $paiement)
+	{
+		$res = PdoCastellane::$monPdo->prepare('UPDATE moniteur SET nom = :nom, prenom = :prenom, date_de_naissance = :datenaissance, telephone = :telephone, date_du_code = :datecode, date_permis = :datepermis, id_paiement = :idpaiement where id_client = :id');
+		$res->bindValue('id',$id, PDO::PARAM_STR);
+		$res->bindValue('nom', $nom, PDO::PARAM_STR);   
+		$res->bindValue('prenom', $prenom, PDO::PARAM_STR);
+		$res->bindValue('datenaissance', $date, PDO::PARAM_STR);
+		$res->bindvalue('telepone', $telepone, PDO::PARAM_STR);
+		$res->bindValue('datecode', $datecode, PDO::PARAM_STR);
+		$res->bindValue('datepermis', $datepermis, PDO::PARAM_STR);
+		$res->bindValue('idpaiement', $paiement, PDO::PARAM_STR);
+		$res->execute();
+	}
+
+	/*Suppression*/
+	public function suppClient($id)
+	{
+		$res = PdoCastellane::$monPdo->prepare('DELETE FROM client WHERE id_client = :id');	
+		$res->bindValue('id',$id, PDO::PARAM_STR);
+		$res->execute();
+	}
+
     /*Affichage Leçon*/ 
     public function getLesLecons()
     {
