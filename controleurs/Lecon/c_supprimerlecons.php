@@ -2,18 +2,18 @@
 	$action=$_REQUEST['action'];
 	switch($action)
 	{
-		case 'suppressionVoiture':
+		case 'suppressionLecon':
 		{	
-			$immatriculation = $_REQUEST['immatriculation'];
-			$Voiture = $pdo->getLaVoiture($immatriculation);
-			include("vues/Voiture/v_supprimervoitures.php");
+			$id = $_REQUEST['id'];
+			$Lecon = $pdo->getLaLecon($id);
+			include("vues/Lecon/v_supprimerlecons.php");
 			break;
 		}
-		case 'confirmSuppressionVoiture':
+		case 'confirmSuppressionLecon':
 		{
-			$immatriculation = $_REQUEST['Vimmatriculation'];
+			$id = $_REQUEST['Lid'];
 			
-			$pdo->suppVoiture($immatriculation);
+			$pdo->suppLecon($id);
 			
 			header('Location: index.php');	
 			break;

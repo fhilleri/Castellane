@@ -19,7 +19,7 @@ switch($uc)
 	case 'modifierlecon' :
 		{include("controleurs/lecon/c_modificationlecon.php");break;}
 	case 'supprimerlecon' :
-        {include("controleurs/lecon/c_supprimerlecon.php");break;}
+        {include("controleurs/Lecon/c_supprimerlecons.php");break;}
     case 'afficherMoniteur' : 
         {include("controleurs/Moniteur/c_voirmoniteurs.php");break;}
     case 'creerMoniteur' :
