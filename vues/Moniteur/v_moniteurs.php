@@ -6,7 +6,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" href="./css/style.css">
 </head>
+
+
 <body>
+    <?php include("vues/navbar.php"); ?>
     <form action="index.php?uc=creerMoniteur&action=creationMoniteur" method="post">
         <p><H1>Liste des Moniteurs</H1><br>
 
