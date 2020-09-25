@@ -2,22 +2,27 @@
 	$action=$_REQUEST['action'];
 	switch($action)
 	{
-		case 'creationVoiture':
+		case 'creationLecon':
 		{
-			$reponse = $pdo->getModeles();
-			include("vues/Voiture/v_creationvoitures.php");
+			$clients = $pdo->getLesClients();
+			$moniteurs = $pdo->getLesMoniteurs();
+			$voitures = $pdo->getLesVoitures();
+			include("vues/Lecon/v_creationlecons.php");
 			break;
 		}
-		case 'confirmCreatVoiture':
+		case 'confirmCreatLecon':
 		{
-			$immatriculation = $_REQUEST['Vimmatriculation'];
-			$Kmachat = $_REQUEST['Vkm'];
-            $originaldate = $_REQUEST['Vdate'];
-            $newdate = new DateTime($originaldate);
-			$truedate = $newdate->format('Y-m-d');
-			$modele = $_REQUEST['Vmodele'];
+			$client = $_REQUEST['FId_client'];
+			$moniteur = $_REQUEST['FId_moniteur'];
+			$voiture = $_REQUEST['FId_voiture'];
+			
+			$date = $_REQUEST['Fdate'];
+			$heure = $_REQUEST['Fheure'];
+            $newdate = DateTime::createFromFormat("Y-m-d G:i", $date . ' ' . $heure);
+			$truedate = $newdate->format('Y-m-d G:i:00');
+			
 
-			$pdo->creerVoiture($immatriculation,$truedate,$Kmachat,$modele);
+			$pdo->creerLecon($truedate, $moniteur, $client, $voiture);
 			
 			header('Location: index.php');	
 			break;

@@ -2,25 +2,35 @@
 	$action=$_REQUEST['action'];
 	switch($action)
 	{
-		case 'modifVoiture':
+		case 'modifClient':
 		{	
-			$immatriculation = $_REQUEST['immatriculation'];
-			$Voiture = $pdo->getLaVoiture($immatriculation);
-			$reponse = $pdo->getModeles();
-			include("vues/Voiture/v_modificationvoitures.php");
+			$id = $_REQUEST['id'];
+			$Client = $pdo->getLeClient($id);
+			include("vues/Client/v_modificationclients.php");
 			break;
 		}
-		case 'confirmModifVoiture':
+		case 'confirmModifClient':
 		{
-			$immatriculation = $_REQUEST['Vimmatriculation'];
-			$Kmachat = $_REQUEST['Vkm'];
-            $originaldate = $_REQUEST['Vdate'];
+			$id = $_REQUEST['id'];
+			$nom = $_REQUEST['Cnom'];
+			$prenom = $_REQUEST['Cprenom'];
+
+            $originaldate = $_REQUEST['Cdate'];
             $newdate = new DateTime($originaldate);
 			$truedate = $newdate->format('Y-m-d');
-			$modele = $_REQUEST['Vmodele'];
-
+			
+			$originalcode = $_REQUEST['Ccode'];
+            $newcode = new DateTime($originalcode);
+			$truecode = $newcode->format('Y-m-d');
+			
+			$originalpermis = $_REQUEST['Cpermis'];
+            $newpermis = new DateTime($originalpermis);
+			$truepermis = $newpermis->format('Y-m-d');
+			
+			$tel = $_REQUEST['Ctel'];
+			$paiement = $_REQUEST['Cpaiement'];
             
-			$pdo->modifVoiture($immatriculation,$Kmachat,$truedate,$modele);
+			$pdo->modifClient($id,$nom,$prenom,$truedate, $tel, $truecode, $truepermis, $paiement);
 			
 			header('Location: index.php');	
 			break;

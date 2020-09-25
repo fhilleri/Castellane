@@ -5,13 +5,12 @@
 	<title>Liste des Moniteurs</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" href="./css/style.css">
-        
 </head>
 <body>
     <form action="index.php?uc=creerMoniteur&action=creationMoniteur" method="post">
         <p><H1>Liste des Moniteurs</H1><br>
 
-        <table border=3 cellspacing=1 >
+        <table border=3 cellspacing=1 class="tiles">
             <tr>
             <th>Nom :</th><th>Prénom :</th><th>date d'embauche :</th>
             </tr> 
@@ -26,7 +25,7 @@
             $embauche = $Moniteur['date_d_embauche'];
             
             ?>
-            <tr>
+            <tr class="tile">
                 <td width=150><?php echo $nom ?></a></td>
                 <td width=150><?php echo $prenom ?></td>
                 <td width=100><?php echo $embauche?></td>
