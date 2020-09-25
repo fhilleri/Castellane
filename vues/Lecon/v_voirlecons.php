@@ -8,32 +8,41 @@
         
 </head>
 <body>
-    <form action="index.php?uc=creerLecon&action=creationLecon" method="post">
+    <form action="index.php?uc=creerlecon&action=creationLecon" method="post">
         <p><H1>Liste des leçons</H1><br>
 
         <table border=3 cellspacing=1 >
             <tr>
-            <th>date :</th><th>moniteur :</th><th>client :</th><th>voiture :</th>
+
+            <th>Client :</th>
+            <th>Moniteur :</th>
+            <th>Date de la leçon :</th>
+            <th>Immatriculation :</th>
+
             </tr> 
             
         <?php
 		
         foreach($lesLecons as $lecon)
         {
+
+            //SELECT lecon.id_lecon, lecon.date_lecon, lecon.immatriculation, lecon.id_moniteur, moniteur.nom as nomMoniteur, 
+            //moniteur.prenom as prenomMoniteur, lecon.id_client, client.nom as nomClient, client.prenom as prenomClient
+                       
             $id = $lecon['id_lecon'];
-            $datelecon = $lecon['date_lecon'];
-            $moniteur = $lecon['id_moniteur'];
-            $client = $lecon['id_client'];
-            $voiture = $lecon['immatriculation'];
+            $date = $lecon['date_lecon'];
+            $immatriculation = $lecon['immatriculation'];
+            $nomMoniteur = $lecon['prenomMoniteur'] . " " . $lecon['nomMoniteur'];
+            $nomClient = $lecon['prenomClient'] . " " . $lecon['nomClient'];
             
             ?>
             <tr>
-                <td width=150><?php echo $datelecon ?></a></td>
-                <td width=150><?php echo $moniteur ?></td>
-                <td width=100><?php echo $client?></td>
-                <td width=100><?php echo $voiture?></td>
-                <td><a href="index.php?uc=modifierlecon&action=modifLecon&id=<?php echo $id ?>"><img src='./images/pencil.svg'></a></td>
-                <td><a href="index.php?uc=supprimerLecon&action=suppressionLecon&id=<?php echo $id ?>"><img src='./images/close.svg'></a></td>
+                <td width=150><?php echo $nomClient ?></a></td>
+                <td width=150><?php echo $nomMoniteur ?></td>
+                <td width=100><?php echo $date?></td>
+                <td width=100><?php echo $immatriculation?></td>
+                <td><a href="index.php?uc=modifierMoniteur&action=modifMoniteur&id=<?php echo $id ?>"><img src='./images/pencil.svg'></a></td>
+                <td><a href="index.php?uc=supprimerMoniteur&action=suppressionMoniteur&id=<?php echo $id ?>"><img src='./images/close.svg'></a></td>
             </tr>
             <?php 
         }
@@ -41,7 +50,7 @@
         </table>
         </br>
 
-        <input class="button" type="submit" value="créer un nouveau moniteur">
+        <input class="button" type="submit" value="créer une nouvelle leçon">
     </form>
 </body>
 </html>

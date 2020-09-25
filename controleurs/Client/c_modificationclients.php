@@ -6,6 +6,7 @@
 		{	
 			$id = $_REQUEST['id'];
 			$unClient = $pdo->getLeClient($id);
+
 			include("vues/Client/v_modificationclients.php");
 			break;
 		}

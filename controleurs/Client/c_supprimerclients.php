@@ -2,18 +2,18 @@
 	$action=$_REQUEST['action'];
 	switch($action)
 	{
-		case 'suppressionVoiture':
+		case 'suppressionClient':
 		{	
-			$immatriculation = $_REQUEST['immatriculation'];
-			$Voiture = $pdo->getLaVoiture($immatriculation);
-			include("vues/Voiture/v_supprimervoitures.php");
+			$id = $_REQUEST['id'];
+			$Client = $pdo->getLeClient($id);
+			include("vues/Client/v_supprimerclients.php");
 			break;
 		}
-		case 'confirmSuppressionVoiture':
+		case 'confirmSuppressionClient':
 		{
-			$immatriculation = $_REQUEST['Vimmatriculation'];
+			$id = $_REQUEST['id'];
 			
-			$pdo->suppVoiture($immatriculation);
+			$pdo->suppClient($id);
 			
 			header('Location: index.php');	
 			break;

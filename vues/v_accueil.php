@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+    <link href="./css/style.css" rel="stylesheet">
     <title>Accueil</title>
 </head>
 <body>
@@ -13,6 +13,7 @@
             <a class="navbar_element" href="index.php?uc=afficherLecon">Leçons</a>
             <a class="navbar_element" href="index.php?uc=afficherVoiture">Voitures</a>
             <a class="navbar_element" href="index.php?uc=afficherMoniteur">Moniteurs</a>
+            <a class="navbar_element" href="index.php?uc=afficherClient">Clients</a>
         </div>
     </header>
 
@@ -51,7 +52,7 @@
                 else echo "<h3>" . $nbLecons . " lecon de prévue pour " . $nomClient . "</h3>";
         ?>
         
-            <table border=3 cellspacing=1 >
+            <table border=3 cellspacing=1 class="tiles">
                 <tr>
                     <th>Date :</th>
                     <th>Heure :</th>
@@ -76,7 +77,7 @@
                         $modele = $lecon["nomModele"];
                         $immatriculation = $lecon["immatriculation"];
                         ?>
-                        <tr>
+                        <tr class="tile">
                             <td width=200><?php echo $date ?></td>
                             <td width=200><?php echo $heure ?></td>
                             <td width=200><?php echo $prenomMoniteur . " " . $nomMoniteur ?></td>
