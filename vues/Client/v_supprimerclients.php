@@ -27,7 +27,7 @@
 			<input type="hidden" name="id" value= <?php echo $id?>>
 			<tr><td>Nom</td><td><input name="Cnom" size=20 value= <?php echo $nom ?> readonly></td></tr>
 			<tr><td>Prénom </td><td><input name="Cprenom" size=20 value= <?php echo $prenom ?> readonly></td></tr>	
-			<tr><td>Date de naissance </td><td><input name="Cdate" size=50 value= "<?php echo $date ?>" readonly></td></tr>	
+			<tr><td>Date de naissance </td><td><input name="Cdate" size=50 value= "<?php echo $naissance ?>" readonly></td></tr>	
 			<tr><td>Téléphone </td><td><input name="Ctel" size=50 value= "<?php echo $tel ?>" readonly></td></tr>	
 			<tr><td>Date du code</td><td><input name="Ccode" size=50 value= "<?php echo $code ?>" readonly></td></tr>	
 			<tr><td>Date du permis </td><td><input name="Cpermis" size=50 value= "<?php echo $permis ?>" readonly></td></tr>	
