@@ -106,7 +106,11 @@ class PdoCastellane
     /*Affichage Leçon*/ 
     public function getLesLecons()
     {
-        $req = "SELECT * from lecon";
+        $req = "SELECT lecon.id_lecon, lecon.date_lecon, lecon.immatriculation, lecon.id_moniteur, moniteur.nom as nomMoniteur, moniteur.prenom as prenomMoniteur, lecon.id_client, client.nom as nomClient, client.prenom as prenomClient
+		FROM lecon
+		INNER JOIN moniteur on lecon.id_moniteur = moniteur.id_moniteur
+		INNER JOIN client on lecon.id_client = client.id_client
+		ORDER BY lecon.date_lecon";
 		$res = PdoCastellane::$monPdo->query($req);
 		$lesLignes = $res->fetchAll();
 		return $lesLignes;
@@ -241,6 +245,15 @@ class PdoCastellane
 		return $lesLignes;
 	}
 
+	public function creerLecon($date, $moniteur, $client, $immatriculation)
+	{
+		$res = PdoCastellane::$monPdo->prepare("INSERT INTO lecon (date_lecon, id_moniteur, id_client, immatriculation) VALUES (:date_lecon, :id_moniteur, :id_client, :immatriculation)");
+		$res->bindvalue('date_lecon', $date, PDO::PARAM_STR);
+		$res->bindvalue('id_moniteur', $moniteur, PDO::PARAM_STR);
+		$res->bindvalue('id_client', $client, PDO::PARAM_STR);
+		$res->bindvalue('immatriculation', $immatriculation, PDO::PARAM_STR);
+		$res->execute();
+	}
 	public function getpaiement()
 	{
 		$req = "SELECT * from mode_de_paiement";
