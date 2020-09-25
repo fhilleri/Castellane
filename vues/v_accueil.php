@@ -36,8 +36,7 @@
                     }
                 ?>
             </select>
-            
-            <input type="submit">
+            <script src="./js/accueil.js"></script>
         </form>
 
         <?php
