@@ -55,11 +55,12 @@ img {
 // Gestion tableau
 // Styles.
 .tiles {
-    top: 400px;
+    top: 100px;
     left: 50%;
     position: relative;
+    //display: contents;
     transform: translateY(-50%) translateX(-50%);
-    width: 600px;
+    width: 100%;
 }
 
 

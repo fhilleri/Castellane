@@ -15,7 +15,7 @@
         <form action="index.php?uc=creerlecon&action=creationLecon" method="post">
             <p><H1>Liste des leçons</H1><br>
 
-            <table border=3 cellspacing=1 >
+            <table border=3 cellspacing=1 class='tiles'>
                 <tr>
                 <th>Client :</th>
                 <th>Moniteur :</th>
@@ -37,7 +37,7 @@
                 $nomClient = $lecon['prenomClient'] . " " . $lecon['nomClient'];
                 
                 ?>
-                <tr>
+                <tr class='tile'>
                     <td width=150><?php echo $nomClient ?></a></td>
                     <td width=150><?php echo $nomMoniteur ?></td>
                     <td width=100><?php echo $date?></td>

@@ -15,7 +15,7 @@
         <form action="index.php?uc=creerVoiture&action=creationVoiture" method="post">
             <p><H1>Liste des Voitures</H1><br>
 
-            <table border=3 cellspacing=1 >
+            <table border=3 cellspacing=1 class='tiles'>
                 <tr>
                 <th>Immatriculation :</th><th>Km à l'achat :</th><th>date d'achat :</th>
                 </tr> 
@@ -29,7 +29,7 @@
                 $date = $Voiture['date_d_achat'];
                 
                 ?>
-                <tr>
+                <tr class='tile'>
                     <td wnomth=150><?php echo $nom ?></a></td>
                     <td wnomth=150><?php echo $Km_achat ?></td>
                     <td wnomth=100><?php echo $date?></td>
