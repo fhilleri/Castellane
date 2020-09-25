@@ -2,22 +2,22 @@
 	$action=$_REQUEST['action'];
 	switch($action)
 	{
-		case 'creationVoiture':
+		case 'creationClient':
 		{
-			$reponse = $pdo->getModeles();
-			include("vues/Voiture/v_creationvoitures.php");
+			include("vues/Client/v_creationclients.php");
 			break;
 		}
-		case 'confirmCreatVoiture':
+		case 'confirmCreatClient':
 		{
-			$immatriculation = $_REQUEST['Vimmatriculation'];
-			$Kmachat = $_REQUEST['Vkm'];
-            $originaldate = $_REQUEST['Vdate'];
+			$nom = $_REQUEST['Cnom'];
+			$prenom = $_REQUEST['Cprenom'];
+            $originaldate = $_REQUEST['Cdate'];
             $newdate = new DateTime($originaldate);
 			$truedate = $newdate->format('Y-m-d');
-			$modele = $_REQUEST['Vmodele'];
+			$tel = $_REQUEST['Ctel'];
+			$paiement = $_REQUEST['Cpaiement'];
 
-			$pdo->creerVoiture($immatriculation,$truedate,$Kmachat,$modele);
+			$pdo->creerClient($nom,$prenom,$truedate, $tel, $paiement);
 			
 			header('Location: index.php');	
 			break;

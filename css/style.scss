@@ -72,7 +72,8 @@ img {
     height: 75px;
     margin: 5px;
     width: 330px;
-    
+    animation-delay: (.06s);
+
     .card {
         backface-visibility: hidden;
         height: 100%;
@@ -94,13 +95,6 @@ img {
     }
 }
 
-
-    .tile {
-        // Delay the animation. Delay increases as items loop.
-        animation-delay: (.06s);
-    } 
-
-
 @keyframes fade-in {
     0% {  
     opacity: 0;
@@ -111,24 +105,6 @@ img {
     opacity: 1;
     transform: rotateY(0deg);
     }
-}
-
-.reload {
-    background: #e2751c;
-    background: linear-gradient(45deg, rgba(#e21c1c,1) 0%, rgba(#e2751c,1) 100%);
-    border-radius: 50px;
-    bottom: 20px;
-    box-shadow: 0 5px 20px rgba(#000, .2);
-    color: #fff;
-    font-size: 13px;
-    font-weight: bold;
-    left: 50%;
-    letter-spacing: .075em;
-    padding: 10px 15px;
-    position: absolute;
-    text-decoration: none;
-    text-transform: uppercase;
-    transform: translateX(-50%);
 }
 
 html {
