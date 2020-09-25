@@ -13,25 +13,27 @@
 
         <table border=3 cellspacing=1 >
             <tr>
-            <th>Nom :</th><th>Prénom :</th><th>date d'embauche :</th>
+            <th>date :</th><th>moniteur :</th><th>client :</th><th>voiture :</th>
             </tr> 
             
         <?php
 		
         foreach($lesLecons as $lecon)
         {
-            $id = $Moniteur['id_moniteur'];
-            $nom = $Moniteur['nom'];
-            $prenom = $Moniteur['prenom'];
-            $embauche = $Moniteur['date_d_embauche'];
+            $id = $lecon['id_lecon'];
+            $datelecon = $lecon['date_lecon'];
+            $moniteur = $lecon['id_moniteur'];
+            $client = $lecon['id_client'];
+            $voiture = $lecon['immatriculation'];
             
             ?>
             <tr>
-                <td width=150><?php echo $nom ?></a></td>
-                <td width=150><?php echo $prenom ?></td>
-                <td width=100><?php echo $embauche?></td>
-                <td><a href="index.php?uc=modifierMoniteur&action=modifMoniteur&id=<?php echo $id ?>"><img src='./images/pencil.svg'></a></td>
-                <td><a href="index.php?uc=supprimerMoniteur&action=suppressionMoniteur&id=<?php echo $id ?>"><img src='./images/close.svg'></a></td>
+                <td width=150><?php echo $datelecon ?></a></td>
+                <td width=150><?php echo $moniteur ?></td>
+                <td width=100><?php echo $client?></td>
+                <td width=100><?php echo $voiture?></td>
+                <td><a href="index.php?uc=modifierlecon&action=modifLecon&id=<?php echo $id ?>"><img src='./images/pencil.svg'></a></td>
+                <td><a href="index.php?uc=supprimerLecon&action=suppressionLecon&id=<?php echo $id ?>"><img src='./images/close.svg'></a></td>
             </tr>
             <?php 
         }

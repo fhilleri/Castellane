@@ -88,7 +88,19 @@ class PdoCastellane
 		$res->execute();
 		$laLigne = $res->fetch();
 		return $laLigne;
-    }
+	}
+
+	/*Modification*/
+	public function modifLecon($id,$date,$moniteur,$client,$voiture)
+	{
+		$res = PdoCastellane::$monPdo->prepare('UPDATE lecon SET date_lecon = :datelecon, id_moniteur = :moniteur, id_client = :client, immatriculation = :voiture where id_lecon = :id');
+		$res->bindValue('datelecon', $date, PDO::PARAM_STR);  
+		$res->bindValue('moniteur', $moniteur, PDO::PARAM_STR);
+		$res->bindValue('client', $client, PDO::PARAM_STR);
+		$res->bindValue('voiture',$voiture, PDO::PARAM_STR); 
+		$res->bindValue('id',$id, PDO::PARAM_STR);
+		$res->execute();
+	}
 
 	/*Gestion Moniteur
 	* affichage

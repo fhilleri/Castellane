@@ -2,25 +2,23 @@
 	$action=$_REQUEST['action'];
 	switch($action)
 	{
-		case 'modifVoiture':
+		case 'modifLecon':
 		{	
-			$immatriculation = $_REQUEST['immatriculation'];
-			$Voiture = $pdo->getLaVoiture($immatriculation);
-			$reponse = $pdo->getModeles();
-			include("vues/Voiture/v_modificationvoitures.php");
+			$id = $_REQUEST['id'];
+			$lecon = $pdo->getLaLecon($id);
+			include("vues/lecon/v_modificationlecons.php");
 			break;
 		}
-		case 'confirmModifVoiture':
+		case 'confirmModifLecon':
 		{
-			$immatriculation = $_REQUEST['Vimmatriculation'];
-			$Kmachat = $_REQUEST['Vkm'];
-            $originaldate = $_REQUEST['Vdate'];
-            $newdate = new DateTime($originaldate);
-			$truedate = $newdate->format('Y-m-d');
-			$modele = $_REQUEST['Vmodele'];
+			$id = $_REQUEST['Lid'];
+			$date = $_REQUEST['Ldate'];
+        	$moniteur = $_REQUEST['Lmoniteur'];
+			$client = $_REQUEST['Lclient'];
+			$voiture = $_REQUEST['Lvoiture'];
 
             
-			$pdo->modifVoiture($immatriculation,$Kmachat,$truedate,$modele);
+			$pdo->modifLecon($id,$date,$moniteur,$client,$voiture);
 			
 			header('Location: index.php');	
 			break;
