@@ -296,5 +296,13 @@ class PdoCastellane
 
 		$res->execute();
 	}
+	public function getpaiement()
+	{
+		$req = "SELECT * from mode_de_paiement";
+		$res = PdoCastellane::$monPdo->query($req);
+		return $res;
+	}
+
+
 }
 ?>

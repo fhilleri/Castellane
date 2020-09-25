@@ -15,24 +15,35 @@
 		<table>
 		<tbody>
 			<tr><td>Nom</td><td><input name="Cnom" size=20></td></tr>
-			<tr><td>Prenom </td><td><input name="Cprenom" size=20></td></tr>
-			<tr><td>adresse</td><td><input name="Cadresse" size=20></td></tr>	
-			<tr><td>date de naissance </td><td><input name="Cdatenaiss" type="date" size=50></td></tr>
-			<tr><td>telephone</td><td><input name="Ctel" size=20></td></tr>
-			<tr><td>date du code</td><td><input name="Cdatecode" type="date" size=50></td></tr>
-			<tr><td>date du permis</td><td><input name="Cpermis" type="date" size=50></td></tr>
-			<tr><td>id paiement</td><td><input name="Cidpa" size=20></td></tr>
-				
+			<tr><td>Prénom </td><td><input name="Cprenom" size=20></td></tr>	
+			<tr><td>Date de naissance </td><td><input name="Cdate" type="date" size=50></td></tr>	
+			<tr><td>Téléphone </td><td><input name="Ctel" size=50></td></tr>	
+			<tr><td>Date du code</td><td><input name="Ccode" size=50 type="date"></td></tr>	
+			<tr><td>Date du permis </td><td><input name="Cpermis" size=50 type="date"></td></tr>	
+			<tr><td>Méthode de paiement</td><td><select name="Cpaiement" size="1" value="">
+                                <?php
+                                $ligne = $paiement->fetch();
+                                    while ($ligne) 
+                                        {
+                                            if ($ligne["id_paiement"] == 1) {
+                                            echo '<OPTION selected value = "' . $ligne["id_paiement"] . '">' . $ligne["libelle"] . '</OPTION>'; 
+                                            $ligne = $paiement->fetch();
+                                            }
+                                            else 
+                                            {
+                                            echo '<OPTION value = "' . $ligne["id_paiement"] . '">' . $ligne["libelle"] . '</OPTION>';
+                                            $ligne = $paiement->fetch();
+                                            }
+                                        }
+                                ?>
+                            </select>
+                            </td></tr>
 		</tbody>
 		</table>
-
 		
                 <br/>
 		<input class="button" type="submit" value="Valider">
 	</form>
-
-
-
 	
 	</body>
 </html>
