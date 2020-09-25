@@ -5,6 +5,7 @@
 		case 'creationClient':
 		{
 			include("vues/navbar.php");
+			$paiement = $pdo->getpaiement();
 			include("vues/Client/v_creationclients.php");
 			break;
 		}

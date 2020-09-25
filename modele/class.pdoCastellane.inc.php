@@ -254,5 +254,13 @@ class PdoCastellane
 		$res->bindvalue('immatriculation', $immatriculation, PDO::PARAM_STR);
 		$res->execute();
 	}
+	public function getpaiement()
+	{
+		$req = "SELECT * from mode_de_paiement";
+		$res = PdoCastellane::$monPdo->query($req);
+		return $res;
+	}
+
+
 }
 ?>
