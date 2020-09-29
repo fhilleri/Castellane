@@ -6,6 +6,7 @@
 		{	
 			$id = $_REQUEST['id'];
 			$Client = $pdo->getLeClient($id);
+			$paiements = $pdo->getpaiement();
 			include("vues/Client/v_modificationclients.php");
 			break;
 		}
