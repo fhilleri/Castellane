@@ -4,15 +4,29 @@ $font-stack: 'Open Sans', sans-serif;
 $color: rgb(138, 73, 243);
 
 * {
-    font: 100% $font-stack;
+    font-family: $font-stack;
 }
 
 body{
     margin: 0;
+    max-height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    width: 100%;
 }
 
 td {
     text-align: center;
+}
+
+th {
+    padding: 10px;
+}
+
+tr {
+    padding: 10px;
 }
 
 .navbar {
@@ -24,6 +38,7 @@ td {
     top: 0;
     width: 100%;
     background-color: gray;
+    z-index: 100;
 }
 
 .navbar_element {
@@ -55,13 +70,23 @@ img {
 // Gestion tableau
 // Styles.
 .tiles {
-    top: 400px;
+    /*top: 400px;
     left: 50%;
     position: relative;
-    transform: translateY(-50%) translateX(-50%);
-    width: 600px;
+    //transform: translateY(-50%) translateX(-50%);
+    width: 600px;*/
+    margin: auto;
+    //border-collapse: collapse;
 }
 
+form > table {
+    margin: auto;
+}
+
+.button {
+    margin: 20px;
+    padding: 5px;
+}
 
 .tile {
     animation: .6s cubic-bezier(.25, .25, .25, 1.15) both fade-in;
@@ -112,12 +137,4 @@ html {
     width: 100%;
 }
 
-body {
-    font-family: helvetica, arial, sans-serif;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    text-align: center;
-    width: 100%;
-}
+

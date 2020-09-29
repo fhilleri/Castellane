@@ -11,7 +11,7 @@
 	<body>
         <?php include("vues/navbar.php"); ?>
         <main>
-            <p><h1>Suppression de la voiture n°<?php echo $Voiture['immatriculation']?> :</h1></p><br/>
+            <p><h1>Suppression de la voiture n°<?php echo $Voiture['immatriculation']?> :</h1></p>
             <?php 
                 $nom = $Voiture['immatriculation'];
                 $Km_achat = $Voiture['solde_km_achat'];
@@ -28,7 +28,7 @@
                 </tbody>
                 </table>
                 
-                        <br/>
+                        
                 <input class="button" type="submit" value="Valider">
             </form>
         </main>

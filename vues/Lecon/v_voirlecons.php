@@ -13,7 +13,7 @@
     <?php include("vues/navbar.php"); ?>
     <main>
         <form action="index.php?uc=creerlecon&action=creationLecon" method="post">
-            <p><H1>Liste des leçons</H1><br>
+            <p><H1>Liste des leçons</H1>
 
             <table border=3 cellspacing=1 >
                 <tr>
@@ -21,6 +21,8 @@
                 <th>Moniteur :</th>
                 <th>Date de la leçon :</th>
                 <th>Immatriculation :</th>
+                <th></th>
+                <th></th>
                 </tr> 
                 
             <?php
@@ -48,6 +50,11 @@
                 <?php 
             }
             ?>
+<<<<<<< Updated upstream
+=======
+            </table>
+            
+>>>>>>> Stashed changes
 
             <input class="button" type="submit" value="créer une nouvelle leçon">
         </form>

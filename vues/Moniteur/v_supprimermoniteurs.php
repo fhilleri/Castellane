@@ -11,7 +11,7 @@
 	<body>
         <?php include("vues/navbar.php"); ?>
         <main>
-            <p><h1>Suppression du moniteur n°<?php echo $moniteur['id_moniteur']?> :</h1></p><br/>
+            <p><h1>Suppression du moniteur n°<?php echo $moniteur['id_moniteur']?> :</h1></p>
             <?php 
                 $id = $moniteur['id_moniteur'];
                 $nom = $moniteur['nom'];
@@ -29,7 +29,7 @@
                 </tbody>
                 </table>
                 
-                        <br/>
+                        
                 <input class="button" type="submit" value="Valider">
             </form>
         </main>

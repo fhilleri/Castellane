@@ -11,7 +11,7 @@
 	<body>
         <?php include("vues/navbar.php"); ?>
         <main>
-            <p><h1>Nouvelle voiture :</h1></p><BR/>
+            <p><h1>Nouvelle voiture :</h1></p>
             <form action="index.php?uc=creerVoiture&action=confirmCreatVoiture" method="post">
             
                 <table>
@@ -39,7 +39,7 @@
                 </tbody>
                 </table>
                 
-                        <br/>
+                        
                 <input class="button" type="submit" value="Valider">
             </form>
         </main>

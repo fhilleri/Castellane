@@ -10,7 +10,7 @@
 	<body>
         <?php include("vues/navbar.php"); ?>
         <main>
-            <p><h1>Nouveau client :</h1></p><BR/>
+            <p><h1>Nouveau client :</h1></p>
             <form action="index.php?uc=creerClient&action=confirmCreatClient" method="post">
             
                 <table>
@@ -42,7 +42,7 @@
                 </tbody>
                 </table>
                 
-                        <br/>
+                        
                 <input class="button" type="submit" value="Valider">
             </form>
         </main>
