@@ -1,0 +1,152 @@
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+  max-height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+td {
+  text-align: center;
+  padding: 10px;
+}
+
+th {
+  padding: 10px;
+}
+
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #9fbbd6;
+  z-index: 100;
+}
+
+.navbar_element {
+  display: block;
+  padding: 20px 50px;
+  text-decoration: none;
+  color: black;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  font-size: 20px;
+  text-align: center;
+  -webkit-transition: padding 0.5s, background-color 0.5s;
+  transition: padding 0.5s, background-color 0.5s;
+}
+
+.navbar_element:hover {
+  background-color: aliceblue;
+  padding: 20px 60px;
+}
+
+main {
+  margin-top: 80px;
+  padding: 0 20px;
+}
+
+img {
+  width: 20px;
+}
+
+.tiles {
+  /*top: 400px;
+    left: 50%;
+    position: relative;
+    //transform: translateY(-50%) translateX(-50%);
+    width: 600px;*/
+  margin: auto;
+}
+
+form > table {
+  margin: auto;
+}
+
+.button {
+  margin: 20px;
+  padding: 5px;
+}
+
+.tile {
+  -webkit-animation: 0.6s cubic-bezier(0.25, 0.25, 0.25, 1.15) both fade-in;
+          animation: 0.6s cubic-bezier(0.25, 0.25, 0.25, 1.15) both fade-in;
+  background: aliceblue;
+  border-radius: 4px;
+  text-align: center;
+  float: none;
+  margin: 5px;
+  width: 330px;
+  -webkit-animation-delay: 0.06s;
+          animation-delay: 0.06s;
+}
+
+.tile .card {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.tile .card.front {
+  background-color: aliceblue;
+}
+
+.tile .card.back {
+  background-color: blue;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+/*# sourceMappingURL=style.css.map */
