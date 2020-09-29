@@ -15,7 +15,7 @@
         <form action="index.php?uc=creerlecon&action=creationLecon" method="post">
             <p><H1>Liste des leçons</H1>
 
-            <table border=3 cellspacing=1 >
+            <table class="tiles" border=3 cellspacing=1 >
                 <tr>
                 <th>Client :</th>
                 <th>Moniteur :</th>
@@ -39,7 +39,7 @@
                 $nomClient = $lecon['prenomClient'] . " " . $lecon['nomClient'];
                 
                 ?>
-                <tr>
+                <tr class="tile">
                     <td width=150><?php echo $nomClient ?></a></td>
                     <td width=150><?php echo $nomMoniteur ?></td>
                     <td width=100><?php echo $date?></td>
@@ -50,11 +50,8 @@
                 <?php 
             }
             ?>
-<<<<<<< Updated upstream
-=======
             </table>
             
->>>>>>> Stashed changes
 
             <input class="button" type="submit" value="créer une nouvelle leçon">
         </form>

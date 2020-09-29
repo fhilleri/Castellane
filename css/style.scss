@@ -1,7 +1,7 @@
 // Variables.
 $tile-bg: aliceblue;
 $font-stack: 'Open Sans', sans-serif;
-$color: rgb(138, 73, 243);
+$color: black;
 
 * {
     font-family: $font-stack;
@@ -19,13 +19,10 @@ body{
 
 td {
     text-align: center;
-}
-
-th {
     padding: 10px;
 }
 
-tr {
+th {
     padding: 10px;
 }
 
@@ -37,7 +34,7 @@ tr {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: gray;
+    background-color: #9fbbd6;
     z-index: 100;
 }
 
@@ -50,12 +47,15 @@ tr {
     flex-grow: 0;
     font-size: 20px;
     text-align: center;
+    transition: padding 0.5s, background-color 0.5s;
+
+    &:hover {
+        background-color: aliceblue;
+        padding: 20px 60px;
+    }
 }
 
-.navbar_element:hover {
-    background-color: aliceblue;
-    padding: 20px 90px;
-}
+
 
 main {
     margin-top: 80px;
@@ -94,7 +94,6 @@ form > table {
     border-radius: 4px;
     text-align: center;
     float: none;
-    height: 75px;
     margin: 5px;
     width: 330px;
     animation-delay: (.06s);
