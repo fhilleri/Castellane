@@ -11,7 +11,7 @@
 	<body>
         <?php include("vues/navbar.php"); ?>
         <main>
-            <p><h1>Nouvelle leçon :</h1></p><BR/>
+            <p><h1>Nouvelle leçon :</h1></p>
             <form action="index.php?uc=creerlecon&action=confirmCreatLecon" method="post">
             
                 <table>
@@ -65,7 +65,7 @@
                 </tbody>
                 </table>
                 
-                        <br/>
+                        
                 <input class="button" type="submit" value="Valider">
             </form>
         </main>

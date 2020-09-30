@@ -10,7 +10,7 @@
 	<body>
 		<?php include("vues/navbar.php"); ?>
 		<main>
-			<p><h1>Suppression du client n°<?php echo $Client['id_client']?> :</h1></p><br/>
+			<p><h1>Suppression du client n°<?php echo $Client['id_client']?> :</h1></p>
 			<?php 
 				$id = $Client['id_client'];
 				$nom = $Client['nom'];
@@ -36,7 +36,7 @@
 				</tbody>
 				</table>
 				
-						<br/>
+						
 				<input class="button" type="submit" value="Valider">
 			</form>
 

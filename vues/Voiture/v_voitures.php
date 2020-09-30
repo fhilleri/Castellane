@@ -13,11 +13,13 @@
     <?php include("vues/navbar.php"); ?>
     <main>
         <form action="index.php?uc=creerVoiture&action=creationVoiture" method="post">
-            <p><H1>Liste des Voitures</H1><br>
+            <p><H1>Liste des Voitures</H1>
 
-            <table border=3 cellspacing=1 class='tiles'>
+            <table class="tiles" border=3 cellspacing=1 >
                 <tr>
                 <th>Immatriculation :</th><th>Km à l'achat :</th><th>date d'achat :</th>
+                <th></th>
+                <th></th>
                 </tr> 
                 
             <?php
@@ -29,7 +31,7 @@
                 $date = $Voiture['date_d_achat'];
                 
                 ?>
-                <tr class='tile'>
+                <tr class="tile">
                     <td wnomth=150><?php echo $nom ?></a></td>
                     <td wnomth=150><?php echo $Km_achat ?></td>
                     <td wnomth=100><?php echo $date?></td>
@@ -40,7 +42,7 @@
             }
             ?>
             </table>
-            </br>
+            
 
             <input class="button" type="submit" value="créer une nouveau voiture">
         </form>

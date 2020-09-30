@@ -11,7 +11,7 @@
 	<body>
 		<?php include("vues/navbar.php"); ?>
 		<main>
-			<p><h1>Modification du moniteur n°<?php echo $id?> :</h1></p><br/>
+			<p><h1>Modification du moniteur n°<?php echo $id?> :</h1></p>
 			<?php 
 				$nom = $moniteur['nom'];
 				$prenom = $moniteur['prenom'];
@@ -28,7 +28,7 @@
 				</tbody>
 				</table>
 				
-						<br/>
+						
 				<input class="button" type="submit" value="Valider">
 			</form>
 		</main>

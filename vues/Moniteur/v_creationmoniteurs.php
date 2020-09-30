@@ -11,7 +11,7 @@
 	<body>
 		<?php include("vues/navbar.php"); ?>
 		<main>
-			<p><h1>Nouveau moniteur :</h1></p><BR/>
+			<p><h1>Nouveau moniteur :</h1></p>
 			<form action="index.php?uc=creerMoniteur&action=confirmCreatMoniteur" method="post">
 			
 				<table>
@@ -22,7 +22,7 @@
 				</tbody>
 				</table>
 				
-						<br/>
+						
 				<input class="button" type="submit" value="Valider">
 			</form>
 		</main>

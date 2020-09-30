@@ -12,11 +12,11 @@
     <?php include("vues/navbar.php"); ?>
     <main>
         <form action="index.php?uc=creerClient&action=creationClient" method="post">
-            <p><H1>Liste des Clients</H1><br>
+            <p><H1>Liste des Clients</H1>
 
             <table border=3 cellspacing=1 class="tiles">
                 <tr>
-                <th>Nom :</th><th>Prénom :</th><th>date de naissance :</th><th>Téléphone :</th><th>date du code :</th><th>date du permis :</th><th>méthode de paiement :</th>
+                <th>Nom :</th><th>Prénom :</th><th>date de naissance :</th><th>Téléphone :</th><th>date du code :</th><th>date du permis :</th><th>méthode de paiement :</th><th></th><th></th>
                 </tr> 
                 
             <?php
@@ -48,7 +48,7 @@
             }
             ?>
             </table>
-            </br>
+            
 
             <input class="button" type="submit" value="créer un nouveau Client">
         </form>

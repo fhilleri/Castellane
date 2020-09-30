@@ -1,18 +1,29 @@
 // Variables.
 $tile-bg: aliceblue;
 $font-stack: 'Open Sans', sans-serif;
-$color: rgb(138, 73, 243);
+$color: black;
 
 * {
-    font: 100% $font-stack;
+    font-family: $font-stack;
 }
 
 body{
     margin: 0;
+    max-height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    width: 100%;
 }
 
 td {
     text-align: center;
+    padding: 10px;
+}
+
+th {
+    padding: 10px;
 }
 
 .navbar {
@@ -23,7 +34,8 @@ td {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: gray;
+    background-color: #9fbbd6;
+    z-index: 100;
 }
 
 .navbar_element {
@@ -35,12 +47,15 @@ td {
     flex-grow: 0;
     font-size: 20px;
     text-align: center;
+    transition: padding 0.5s, background-color 0.5s;
+
+    &:hover {
+        background-color: aliceblue;
+        padding: 20px 60px;
+    }
 }
 
-.navbar_element:hover {
-    background-color: aliceblue;
-    padding: 20px 90px;
-}
+
 
 main {
     margin-top: 80px;
@@ -55,14 +70,23 @@ img {
 // Gestion tableau
 // Styles.
 .tiles {
-    top: 100px;
+    /*top: 400px;
     left: 50%;
     position: relative;
-    //display: contents;
-    transform: translateY(-50%) translateX(-50%);
-    width: 100%;
+    //transform: translateY(-50%) translateX(-50%);
+    width: 600px;*/
+    margin: auto;
+    //border-collapse: collapse;
 }
 
+form > table {
+    margin: auto;
+}
+
+.button {
+    margin: 20px;
+    padding: 5px;
+}
 
 .tile {
     animation: .6s cubic-bezier(.25, .25, .25, 1.15) both fade-in;
@@ -70,7 +94,6 @@ img {
     border-radius: 4px;
     text-align: center;
     float: none;
-    height: 75px;
     margin: 5px;
     width: 330px;
     animation-delay: (.06s);
@@ -113,12 +136,4 @@ html {
     width: 100%;
 }
 
-body {
-    font-family: helvetica, arial, sans-serif;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    text-align: center;
-    width: 100%;
-}
+

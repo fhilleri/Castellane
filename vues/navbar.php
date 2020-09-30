@@ -5,5 +5,6 @@
         <a class="navbar_element" href="index.php?uc=afficherVoiture">Voitures</a>
         <a class="navbar_element" href="index.php?uc=afficherMoniteur">Moniteurs</a>
         <a class="navbar_element" href="index.php?uc=afficherClient">Clients</a>
+        <script> </script>
     </div>
 </header>
